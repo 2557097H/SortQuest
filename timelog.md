@@ -12,15 +12,24 @@
 * This timelog should be filled out honestly, regularly (daily) and accurately. It is for *your* benefit.
 * Follow the structure provided, grouping time by weeks.  Quantise time to the half hour.
 
+## Week 0
+
+## 21 Sept 2023
+
+* *0.5 hours* Meeting with supervisor
+
 ## Week 1
 
-### 19 Oct 2019
+* Had full time Internship up to 27/09/2023 so not been able to do as much as hoped.
 
-* *4 hours* Read the project guidance notes
-* *0.5 hour* Created GitLab repository and cloned the cookiecutter for the projects
-* *1 hour* Modified dissertation template, compiled  
+## 28 Sept 2023
 
-## 20 Oct 2019
+* *3 hours* Read the project guidance notes and watched recorded session presented by Graham Macdonald
 
-* *1 hour* meeting with supervisor
-* *2 hours* writing initial version of test harness
+## Week 2
+
+## 2 Oct 2023
+
+* *1 hours* Read thorugh the project guidance on moodle
+* *1 hour* Created GitLab repository and added recommended directory strucutre to it with all templates needed
+
