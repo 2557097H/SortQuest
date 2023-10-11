@@ -31,5 +31,13 @@
 ## 2 Oct 2023
 
 * *1 hours* Read thorugh the project guidance on moodle
-* *1 hour* Created GitLab repository and added recommended directory strucutre to it with all templates needed
+* *1 hours* Created GitLab repository and added recommended directory strucutre to it with all templates needed
+
+## 5th Oct 2023
+
+* *3 hours* Literature research
+
+## 11th Oct 2023
+
+* *3 hours* Literature research
 
