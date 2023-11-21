@@ -122,3 +122,8 @@
 
 ## 20th Nov 2023
 
+* *5 hours* Watched Unity tutorials, created home screen, added unity project to my repository 
+
+## 21st Nov 2023
+
+* *2 hours* Created practice and tutorial screen and added navigation from home screen buttons
