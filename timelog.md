@@ -64,6 +64,10 @@
 
 * *5 hour* conducted background research
 
+## 19th Oct 2023
+
+* *0.5 hour* Meeting with supervisor
+
 ## Week 5
 
 ## 24th Oct 2023
@@ -75,3 +79,46 @@
 
 * *3 hours* Contributed more to related products and background resaerch
 * *2 Hours* Functional Requirements
+
+## 26th Oct 2023
+
+* *0.5 hour* Meeting with supervisor
+
+## Week 6
+
+## 31st Oct 2023
+
+* *1 hour* researching concepts for my game
+* *1 hour* creating non functional requirements
+* *1 hour* Wireframes
+
+## 1st Nov 2023
+
+* *2 hour* Wireframes
+
+## 2nd Nov 2023 
+
+* *0.5 hour* Supervisor meeting
+
+## Week 7
+
+## 8th Nov 2023
+
+* *6 hour* Designing plan and look for game and adding more detail to wireframes
+
+## 9th Nov 2023
+
+* *0.5 hour* Supervisor meeting
+
+## Week 8
+
+* Spent majority of the week doing algorithmics 2 coursework so did not have time to spend on project. Therefore no meeting was needed this week
+
+## 14th Nov 2023
+
+* *1 hour* Downloaded unity and set up directory
+
+## Week 9
+
+## 20th Nov 2023
+
