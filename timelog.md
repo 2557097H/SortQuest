@@ -126,4 +126,32 @@
 
 ## 21st Nov 2023
 
-* *2 hours* Created practice and tutorial screen and added navigation from home screen buttons
+* *2 hours* Created practice and tutorial screen and added navigation to them from home screen buttons
+
+## 23rd Nov 2023
+
+* *0.5 hour* Supervisor meeting
+
+## Week 10
+
+* This week was spent doing FP & RMT Coursework so no meeting
+
+## Week 11
+
+## 3rd Dec 2023
+
+* *1 hour* Started watching unity tutorial on creating 2d games
+
+## 4th Dec 2023
+
+* *3 hour* Continued watching tutorial 
+
+## 5th Dec 2023
+
+* *6 hour* Started developing story mode. Added tilemap and initial player movement.
+
+## 6th Dec 2023
+
+* *
+
+
