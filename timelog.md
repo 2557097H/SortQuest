@@ -1,8 +1,8 @@
 # Timelog
 
 * PROJECT NAME
-* YOUR NAME
-* STUDENT_ID
+* Euan Halliday
+* 2557097H
 * SUPERVISOR NAME
 
 ## Guidance
@@ -148,10 +148,30 @@
 
 ## 5th Dec 2023
 
-* *6 hour* Started developing story mode. Added tilemap and initial player movement.
+* *6 hour* Started developing story mode. Added tilemap and player movement.
 
 ## 6th Dec 2023
 
-* *
+* *2 hour* Added initial animations to player movement. (Idle and run)
+* *1.5 hour* Looked into version control techniques, and made an initial starts on adding build automation
+* *0.5 hour* fixed version control problems and started adding feature branching and issues
+* *3.5 hour* improved gui and added java code for learn mode (renamed tutorial mode to learn mode)
 
+## 7th Dec 2023
+
+* *0.5 hour* Meeting with supervisor
+
+## 11th Dec 2023
+
+* *2 hour* Unity tutorials
+
+## 12th Dec 2023
+
+* *2 hour* Wrote up status report
+
+## 13th Dec 2023
+
+* *0.5 hour* Meeting with supervisor
+
+## 27th Dec 2023
 
