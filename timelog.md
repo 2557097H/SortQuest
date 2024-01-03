@@ -175,3 +175,6 @@
 
 ## 27th Dec 2023
 
+* *1 hour* Project management
+* 
+
