@@ -176,5 +176,13 @@
 ## 27th Dec 2023
 
 * *1 hour* Project management
-* 
+* *1 hour* Coding
+
+## 3rd Jan 2024
+
+* *3 hour* Coded new animations
+
+## 4th Jan 2024
+
+* *3 hour* Added a parallex background
 
