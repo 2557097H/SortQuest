@@ -184,5 +184,13 @@
 
 ## 4th Jan 2024
 
-* *3 hour* Added a parallex background
+* *3 hour* Added and coded a parallex background
+
+## 5th Jan 2024
+
+* *2 hour* Added death animation 
+
+## 6th Jan 2024
+
+* *6 hour* Created first bubble sort challenge,debugged and implemented story intro
 
