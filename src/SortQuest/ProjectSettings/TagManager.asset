@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trap
+  - Chest
+  - Board
   layers:
   - Default
   - TransparentFX

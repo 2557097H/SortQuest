@@ -1452,7 +1452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &353226983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3686,12 +3686,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "private int partition(int arr[], int begin, int end) {\r\n    int pivot
-    = arr[end];\r\n    int i = (begin-1);\r\n    for (int j = begin; j < end; j++)
-    {\r\n        if (arr[j] <= pivot) {\r\n            i++;\r\n            int swapTemp
-    = arr[i];\r\n            arr[i] = arr[j];\r\n            arr[j] = swapTemp;\r\n       
-    }\r\n    }\r\n    int swapTemp = arr[i+1];\r\n    arr[i+1] = arr[end];\r\n   
-    arr[end] = swapTemp;\r\n    return i+1;\r\n}"
+  m_text: "procedure partition(A: list, low: integer, high: integer) returns integer\r\n   
+    pivot = A[high]\r\n    i = low - 1\r\n\r\n    for j from low to high - 1\r\n       
+    if A[j] <= pivot\r\n            i = i + 1\r\n            swap(A[i], A[j])\r\n       
+    end if\r\n    end for\r\n\r\n    swap(A[i + 1], A[high])\r\n    return i + 1\r\nend
+    procedure"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -3994,7 +3993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &906673470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6033,7 +6032,7 @@ MonoBehaviour:
   m_text: Quick Sort - Java Code
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc9a4915ff4459a4d91b3466b3fabd26, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_sharedMaterial: {fileID: -3284442309478387561, guid: dc9a4915ff4459a4d91b3466b3fabd26, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6606,7 +6605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1378631392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9628,10 +9627,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "public void quickSort(int arr[], int begin, int end) {\r\n    if (begin
-    < end) {\r\n        int partitionIndex = partition(arr, begin, end);\r\n\r\n       
-    quickSort(arr, begin, partitionIndex-1);\r\n        quickSort(arr, partitionIndex+1,
-    end);\r\n    }\r\n}"
+  m_text: "procedure quickSort(A: list, low: integer, high: integer)\r\n    if low
+    < high\r\n        pivotIndex = partition(A, low, high)\r\n        quickSort(A,
+    low, pivotIndex - 1)\r\n        quickSort(A, pivotIndex + 1, high)\r\n    end
+    if\r\nend procedure"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}

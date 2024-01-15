@@ -1754,7 +1754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1015598842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1621537276}
+        m_TargetAssemblyTypeName: SceneSelector, Assembly-CSharp
+        m_MethodName: SwitchSceneBubbleStory
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BubbleSortStory
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1015598842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2692,6 +2704,7 @@ GameObject:
   - component: {fileID: 1621537273}
   - component: {fileID: 1621537272}
   - component: {fileID: 1621537275}
+  - component: {fileID: 1621537276}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2790,6 +2803,18 @@ MonoBehaviour:
   inputThree: {fileID: 513135331}
   inputFour: {fileID: 330621421}
   continueButton: {fileID: 1015598841}
+--- !u!114 &1621537276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621537271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb946e41c70033c4ca271e0cd922c9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1686845596
 GameObject:
   m_ObjectHideFlags: 0

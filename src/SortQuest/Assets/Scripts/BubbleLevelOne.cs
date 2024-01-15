@@ -20,7 +20,7 @@ public class InputFieldChecker : MonoBehaviour
         // Subscribe to the "onValueChanged" events for each input field
         inputOne.onValueChanged.AddListener(delegate { CheckInputField(inputOne, "length"); });
         inputTwo.onValueChanged.AddListener(delegate { CheckInputField(inputTwo, "n-1"); });
-        inputThree.onValueChanged.AddListener(delegate { CheckInputField(inputThree, "A[j] > A[j-1]"); });
+        inputThree.onValueChanged.AddListener(delegate { CheckInputField(inputThree, "A[j] > A[j+1]"); });
         inputFour.onValueChanged.AddListener(delegate { CheckInputField(inputFour, "swap"); });
     }
 

@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BubbleSortStory.unity
     guid: 8954da9bbb78e064b9aa26f0aca5bf74
+  - enabled: 1
+    path: Assets/Scenes/BubbleSortLevelOne.unity
+    guid: 4e88eea1bcbaa814d9d5eb05f7062e12
+  - enabled: 1
+    path: Assets/Scenes/BubleSortLevelTwo.unity
+    guid: fd594bbf8e7814d42961b2442fc8c925
   m_configObjects: {}
