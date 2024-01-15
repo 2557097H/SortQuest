@@ -175,3 +175,22 @@
 
 ## 27th Dec 2023
 
+* *1 hour* Project management
+* *1 hour* Coding
+
+## 3rd Jan 2024
+
+* *3 hour* Coded new animations
+
+## 4th Jan 2024
+
+* *3 hour* Added and coded a parallex background
+
+## 5th Jan 2024
+
+* *2 hour* Added death animation 
+
+## 6th Jan 2024
+
+* *6 hour* Created first bubble sort challenge,debugged and implemented story intro
+
