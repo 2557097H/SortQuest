@@ -1,7 +1,0 @@
-stages:
-    - build
-maven-build:
-    image: maven:3-eclipse-temurin-21-jammy
-    stage: build
-    script:
-    - ./mvnw clean package
