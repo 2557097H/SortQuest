@@ -231,4 +231,10 @@
 
 ## 18th Jan 2024
 
+* *5 hour* Continued coding quick sort challenge level 2
+
+## 19th Jan 2024
+
+* *1 hour* Continued coding quick sort challenge level 2
+
 

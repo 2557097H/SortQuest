@@ -26,7 +26,7 @@ public class QuickSortLevelTwo : MonoBehaviour
     private List<int[]> pivotHistoryList = new System.Collections.Generic.List<int[]>();
     private List<int> woodNumberArrayCopy;
     private List<int> pivotList = new System.Collections.Generic.List<int>();
-    private int pivotIndex;
+    private int pivot;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +42,7 @@ public class QuickSortLevelTwo : MonoBehaviour
     {
         if (low < high)
         {
-            pivotIndex = Partition(arr, low, high);
+            int pivotIndex = Partition(arr, low, high);
 
             QuickSort(arr, low, pivotIndex - 1);
             QuickSort(arr, pivotIndex + 1, high);
@@ -53,8 +53,7 @@ public class QuickSortLevelTwo : MonoBehaviour
     // Partition function
     int Partition(int[] arr, int low, int high)
     {
-        int pivot = arr[high];
-        pivotList.Add(pivot);
+        pivot = arr[high];
         int i = low - 1;
 
         for (int j = low; j <= high - 1; j++)
@@ -62,19 +61,17 @@ public class QuickSortLevelTwo : MonoBehaviour
             if (arr[j] <= pivot)
             {
                 i++;
-                Swap(arr, i, j);
+                SwapOne(arr, i, j);
             }
         }
-        Swap(arr, i + 1, high);
+        SwapTwo(arr, i + 1, high);
         
         return (i + 1);
     }
 
     // Swap function
-    void Swap(int[] arr, int i, int j)
+    void SwapOne(int[] arr, int i, int j)
     {
-        Debug.Log(arr[i]);
-        Debug.Log(arr[j]);
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -83,12 +80,25 @@ public class QuickSortLevelTwo : MonoBehaviour
             history.Add((int[])arr.Clone());
         }
 
-        
+
+    }
+
+    void SwapTwo(int[] arr, int i, int j)
+    {
+        pivotList.Add(arr[j]);
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        if (arr[i] != arr[j])
+        {
+            history.Add((int[])arr.Clone());
+        }
+        pivotHistoryList.Add((int[])arr.Clone());
     }
 
     public void UpdateWoodArray()
     {
-        Debug.Log("[" + string.Join(", ", pivotList) + "]");
+
         // Get all child objects of the WoodManager and sort them based on their position in the hierarchy
         GameObject gridObject = GameObject.Find("Grid");
         //woodNumberArrayCopy = woodNumberArray;
@@ -124,11 +134,11 @@ public class QuickSortLevelTwo : MonoBehaviour
                 resultText.text = "Correct!";
                 stepText.text = "Step: " + (steps + 1).ToString() + "/" + (history.Count + 1);
                 currentStep.text = "Current Step" + "[" + string.Join(", ", woodNumberArrayCopy) + "]";
-                /*
+                
                                 if (woodNumberArray.SequenceEqual(pivotHistoryList[0]))
                                 {
                                     // Access and process each pivotArray here
-                                    int index = Array.IndexOf(pivotHistoryList[0], pivotHistory[0]);
+                                    int index = Array.IndexOf(pivotHistoryList[0], pivotList[0]);
                                     Debug.Log(index);
                                     if (index != -1)
                                     {
@@ -140,10 +150,10 @@ public class QuickSortLevelTwo : MonoBehaviour
                                         Transform childTransform = gridObject.transform.GetChild(index);
                                         GameObject slotObject = childTransform.gameObject;
                                         slotObject.GetComponent<Image>().color = Color.green;
-                                        pivotHistory.RemoveAt(0);
+                                        pivotList.RemoveAt(0);
                                         pivotHistoryList.RemoveAt(0);
                                     }
-                                }*/
+                                }
 
                 if (steps == history.Count)
                 {
