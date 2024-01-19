@@ -194,3 +194,41 @@
 
 * *6 hour* Created first bubble sort challenge,debugged and implemented story intro
 
+## 7th Jan 2024
+
+* *6 hour* Created Scene selection script to navigate between scripts, more debugging and started designing the map for story mode.
+
+## 8th Jan 2024
+
+* *6 hour* Started coding bubble sort challenge level 2.
+
+## 9th Jan 2024
+
+* *7 hour* Finished bubble sort challenge level 2
+
+## 10th Jan 2024
+
+* *0.5 hour* Meeting with supervisor
+* *1 hour* Bug fixing
+
+## 14th Jan 2024
+
+* *5 hour* Started coding quick sort challenge level 1
+
+## 15th Jan 2024
+
+* *2 hour* Finished coding quick sort challenge level 1
+* *1 hour* Started designing quicksort map
+* *1 hour* Started coding quick sort challenge level 2
+
+## 16th Jan 2024
+
+* *2 hour* Continued coding quick sort challenge level 2
+
+## 17th Jan 2024
+
+* *0.5 hour* Meeting with supervisor
+
+## 18th Jan 2024
+
+
