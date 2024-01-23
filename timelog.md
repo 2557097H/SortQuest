@@ -237,4 +237,8 @@
 
 * *1 hour* Continued coding quick sort challenge level 2
 
+## 21st Jan 2024
+
+* *5 hour* Finished quick sort challenge level two & merge sort challenge level one 
+
 
