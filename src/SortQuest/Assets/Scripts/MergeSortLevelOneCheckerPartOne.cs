@@ -27,6 +27,8 @@ public class MergeSortLevelOneCheckerPartOne : MonoBehaviour
         {
             if (codeBlocks[i].text != GetExpectedCodeBlockText(i))
             {
+                Debug.Log(codeBlocks[i].text);
+                Debug.Log(GetExpectedCodeBlockText(i));
                 checkText.text = "Not correct order - try again";
                 return;
             }

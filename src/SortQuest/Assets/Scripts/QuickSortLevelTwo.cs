@@ -22,7 +22,6 @@ public class QuickSortLevelTwo : MonoBehaviour
 
     private int steps = 0;
     private List<int[]> history = new System.Collections.Generic.List<int[]>();
-    private List<int> pivotHistory = new System.Collections.Generic.List<int>();
     private List<int[]> pivotHistoryList = new System.Collections.Generic.List<int[]>();
     private List<int> woodNumberArrayCopy;
     private List<int> pivotList = new System.Collections.Generic.List<int>();
@@ -125,9 +124,6 @@ public class QuickSortLevelTwo : MonoBehaviour
 
         if (steps < history.Count)
         {
-            
-            
-
             if (woodNumberArray.SequenceEqual(history[steps]))
             {
                 steps++;

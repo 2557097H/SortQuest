@@ -55,11 +55,9 @@ public class MergeSortLevelOneCheckerPartTwo : MonoBehaviour
             "A[k] = r[j]\r\nj = j + 1",
             "k = k + 1",
             "while i < left",
-            "A[k] = l[i]",
-            "i = i + 1\r\nk = k + 1",
+            "A[k] = l[i]\r\ni = i + 1, k = k + 1",
             "while j < right",
-            "A[k] = r[j]",
-            "j = j + 1\r\nk = k + 1"
+            "A[k] = r[j]\r\nj = j + 1, k = k + 1"
         };
 
         // Ensure the index is within bounds

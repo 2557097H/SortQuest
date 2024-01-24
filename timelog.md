@@ -241,4 +241,6 @@
 
 * *5 hour* Finished quick sort challenge level two & merge sort challenge level one 
 
+## 22nd Jan 2024
 
+* *5 hour* Finished merge sort challenge level one and started level two
