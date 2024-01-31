@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuickSortLevelTwo.unity
     guid: f6ff04609e5a01548b288e52ac7695eb
+  - enabled: 1
+    path: Assets/Scenes/MergeSortStory.unity
+    guid: 4b2f2a44c5c102747b0e27e29d5860fa
+  - enabled: 1
+    path: Assets/Scenes/MergeSortLevelOne.unity
+    guid: 92b774ab965e8734eb1f75a8ef1a3591
   m_configObjects: {}

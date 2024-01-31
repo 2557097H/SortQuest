@@ -241,4 +241,27 @@
 
 * *5 hour* Finished quick sort challenge level two & merge sort challenge level one 
 
+## 22nd Jan 2024
 
+* *5 hour* Finished merge sort challenge level one and started level two
+
+## 23rd Jan 2023
+
+*6 hour* Continued coding merge sort challenge level two
+
+# 24th Jan 2023
+
+* *0.5 hour* Meeting with supervisor
+* *3 hour* Nearly completed merge sort level (just need to create some better visual elements for winning and helping learning) 
+
+# 29th Jan 2023
+
+* *3 hour* Added better visuals for merge sort level two learning
+
+# 30th Jan 2023
+
+* *2 Hour* started planning map level design
+
+# 31st Jan 2023
+
+* *0.5 hour* Meeting with supervisor
