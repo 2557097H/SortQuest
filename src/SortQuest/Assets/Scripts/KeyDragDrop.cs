@@ -6,6 +6,7 @@ public class KeyDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 {
     [HideInInspector] public Transform parentAfterDrag;
     private CanvasGroup canvasGroup;
+    private GameObject duplicatedKey;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class KeyDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
             if (allSiblingsOccupied)
             {
-                GameObject duplicatedKey = Instantiate(gameObject);
+                duplicatedKey = Instantiate(gameObject);
                 duplicatedKey.transform.SetParent(parentAfterDrag);
             }
         }
@@ -64,6 +65,12 @@ public class KeyDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         // Enable raycasts again
         canvasGroup.blocksRaycasts = true;
+
+        if (transform.parent.childCount > 1)
+        {
+            Destroy(duplicatedKey);
+
+        }
     }
 
 }

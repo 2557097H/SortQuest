@@ -5,12 +5,14 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MergeSortLevelTwo : MonoBehaviour
 {
     private List<int> mergeHistory = new System.Collections.Generic.List<int>();
     private List<int> mergeHistoryChecker = new System.Collections.Generic.List<int>();
     public TMP_Text resultText;
+    public Button continueButton;
 
     void Start()
     {
@@ -100,6 +102,10 @@ public class MergeSortLevelTwo : MonoBehaviour
         
         foreach (Transform list in contentObject.transform)
         {
+            if (!list.name.Contains("List"))
+            {
+                continue;
+            }
             Transform grid = list.transform.GetChild(0);
 
             foreach (Transform slot in grid)
@@ -114,7 +120,8 @@ public class MergeSortLevelTwo : MonoBehaviour
             catch (Exception ex)
             {
                 Console.WriteLine($"Exception caught: {ex.Message}");
-                break;
+                mergeHistoryChecker.Add(-1);
+                continue;
             }
         
         }
@@ -124,11 +131,42 @@ public class MergeSortLevelTwo : MonoBehaviour
 
         if (mergeHistoryChecker.SequenceEqual(mergeHistory))
         {
-            resultText.text = "FINISHED";
+            resultText.text = "Correct - Well Done";
+            continueButton.gameObject.SetActive(true);
         }
         else
         {
-            resultText.text = "take the L";
+            resultText.text = "Wrong";
+            int i = 0;
+                foreach (Transform list in contentObject.transform)
+                {
+                if (!list.name.Contains("List")) { continue; }
+                    Transform grid = list.transform.GetChild(0);
+
+                foreach (Transform slot in grid)
+                {
+                    GameObject slotObject = slot.gameObject;
+                    
+                    if (mergeHistory[i] != mergeHistoryChecker[i])
+                    {
+                        
+                        slotObject.GetComponent<Image>().color = Color.red;
+                        i++;
+                    }
+                    else
+                    {
+                        slotObject.GetComponent<Image>().color = Color.green;
+                        i++;
+                    }
+                            
+                            
+
+                        }
+
+
+                }
+
+            
         }
     }
 }
