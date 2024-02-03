@@ -265,3 +265,14 @@
 # 31st Jan 2023
 
 * *0.5 hour* Meeting with supervisor
+* *4 hour* Finished bubble sort map design
+
+## 1st Feb 2023
+
+* *1 hour* finishing touches to bubble sort map
+
+-Deploying app
+-Customisation of avatars
+-Profiles
+-Map designs
+-Practice mode

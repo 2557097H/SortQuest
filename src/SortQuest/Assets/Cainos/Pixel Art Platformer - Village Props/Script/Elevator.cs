@@ -2,6 +2,7 @@ using UnityEngine;
 
 using Cainos.LucidEditor;
 using Cainos.Common;
+using System.Threading.Tasks;
 
 namespace Cainos.PixelArtPlatformer_VillageProps
 {
@@ -9,6 +10,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
     {
         [FoldoutGroup("Params")] public Vector2 lengthRange = new Vector2(2, 5);
         [FoldoutGroup("Params")] public float waitTime = 1.0f;
+        [FoldoutGroup("Params")] public int waitTimeBeforeStart = 0;
         [FoldoutGroup("Params")] public float moveSpeed = 3.0f;
         [FoldoutGroup("Params")] public State startState = State.Up;
 
@@ -64,8 +66,9 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         private SecondOrderDynamics secondOrderDynamics = new SecondOrderDynamics(4.0f, 0.3f, -0.3f);
 
 
-        private void Start()
+        private async void Start()
         {
+            await Task.Delay(waitTimeBeforeStart);
             curState = startState;
             Length = curState == State.Up ? lengthRange.y : lengthRange.x;
             targetLength = Length;

@@ -76,11 +76,8 @@ public class BubbleSortLevelTwo : MonoBehaviour
             }
             catch (Exception ex)
             {
-               
                 Console.WriteLine($"Exception caught: {ex.Message}");
-
-                
-                break;
+                continue;
             }
 
 
@@ -95,17 +92,58 @@ public class BubbleSortLevelTwo : MonoBehaviour
                 resultText.text = "Correct!";
                 stepText.text = "Step: " + (steps + 1).ToString() + "/" + (history.Count + 1);
                 currentStep.text = "Current Step" + "[" + string.Join(", ", woodNumberArrayCopy) + "]";
-                if (steps == history.Count)
+                for (int i = 0; i < gridObject.transform.childCount; i++)
                 {
-                    continueButton.gameObject.SetActive(true);
+                    try
+                    {
+                        Transform childTransform = gridObject.transform.GetChild(i);
+                        GameObject slotObject = childTransform.gameObject;
+                        slotObject.GetComponent<Image>().color = Color.green;
+
+
+                        if (steps == history.Count)
+                        {
+                            continueButton.gameObject.SetActive(true);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Exception caught: {ex.Message}");
+                        continue;
+                    }
                 }
 
             }
             else
             {
-                resultText.text = "Wrong!";
 
-
+                for (int i = 0; i < gridObject.transform.childCount; i++)
+                {
+                    try
+                    {
+                        Transform childTransform = gridObject.transform.GetChild(i);
+                        GameObject slotObject = childTransform.gameObject;
+                        GameObject woodObject = slotObject.transform.GetChild(0).gameObject;
+                        TMP_Text numberTextTMP = woodObject.transform.GetChild(0).GetComponent<TMP_Text>();
+                        if (int.TryParse(numberTextTMP.text, out int number))
+                        {
+                            if (number == history[steps][i])
+                            {
+                                slotObject.GetComponent<Image>().color = Color.green;
+                            }
+                            else
+                            {
+                                slotObject.GetComponent<Image>().color = Color.red;
+                            }
+                        }
+                    }
+                                catch (Exception ex)
+            {
+                Console.WriteLine($"Exception caught: {ex.Message}");
+                continue;
+            }
+                }
+                    resultText.text = "Wrong!";
             }
         }
         

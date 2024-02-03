@@ -2389,8 +2389,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2097449309
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2478,7 +2478,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "The Pseudocode for bubblesort is shown on the right however parts of it
     are missing. \n\nFill in the blanks to obtain the map needed to progress through
-    the land of bubble sort."
+    the lands of bubble sort, quick sort and merge sort."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc9a4915ff4459a4d91b3466b3fabd26, type: 2}
   m_sharedMaterial: {fileID: -3284442309478387561, guid: dc9a4915ff4459a4d91b3466b3fabd26, type: 2}

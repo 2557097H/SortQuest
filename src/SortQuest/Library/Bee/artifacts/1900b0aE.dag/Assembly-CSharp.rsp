@@ -436,6 +436,7 @@
 "Assets/Scripts/QuickSortLevelOneCheckerPartOne.cs"
 "Assets/Scripts/QuickSortLevelOneCheckerPartTwo.cs"
 "Assets/Scripts/QuickSortLevelTwo.cs"
+"Assets/Scripts/Rotate.cs"
 "Assets/Scripts/SceneSelector.cs"
 "Assets/Scripts/WoodDragDrop.cs"
 "Assets/Scripts/WoodSlot.cs"
