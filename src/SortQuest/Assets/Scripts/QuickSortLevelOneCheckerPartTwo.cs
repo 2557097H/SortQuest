@@ -25,8 +25,10 @@ public class QuickSortLevelOneCheckerPartTwo : MonoBehaviour
         // Check the order
         for (int i = 0; i < codeBlocks.Count; i++)
         {
-            if (codeBlocks[i].text != GetExpectedCodeBlockText(i))
+            if (codeBlocks[i].text.ToLower().Replace(" ", "").Trim() != GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim())
             {
+                Debug.Log(codeBlocks[i].text.ToLower().Replace(" ", "").Trim());
+                Debug.Log(GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim());
                 checkText.text = "Not correct order - try again";
                 return;
             }
@@ -45,11 +47,11 @@ public class QuickSortLevelOneCheckerPartTwo : MonoBehaviour
         string[] expectedOrder =
         {
             "procedure partition(A: list, low: integer, high: integer) returns integer",
-            "pivot = A[high]\r\ni = low - 1",
+            "pivot = A[high]\ni = low - 1",
             "for j from low to high - 1",
             "if A[j] <= pivot",
-            "i = i + 1\r\nswap(A[i], A[j])",
-            "swap(A[i + 1], A[high])\r\nreturn i + 1"
+            "i = i + 1\nswap(A[i], A[j])",
+            "swap(A[i + 1], A[high])\nreturn i + 1"
         };
 
         // Ensure the index is within bounds

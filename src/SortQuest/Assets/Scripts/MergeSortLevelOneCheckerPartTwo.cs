@@ -25,10 +25,8 @@ public class MergeSortLevelOneCheckerPartTwo : MonoBehaviour
         // Check the order
         for (int i = 0; i < codeBlocks.Count; i++)
         {
-            if (codeBlocks[i].text != GetExpectedCodeBlockText(i))
+            if (codeBlocks[i].text.ToLower().Replace(" ", "").Trim() != GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim())
             {
-                Debug.Log(codeBlocks[i].text);
-                Debug.Log(GetExpectedCodeBlockText(i));
                 checkText.text = "Not correct order - try again";
                 return;
             }
@@ -50,14 +48,14 @@ public class MergeSortLevelOneCheckerPartTwo : MonoBehaviour
             "i = 0, j = 0, k = 0",
             "while i < left and j < right",
             "if l[i] <= r[j]",
-            "A[k] = l[i]\r\ni = i + 1",
+            "A[k] = l[i]\ni = i + 1",
             "else",
-            "A[k] = r[j]\r\nj = j + 1",
+            "A[k] = r[j]\nj = j + 1",
             "k = k + 1",
             "while i < left",
-            "A[k] = l[i]\r\ni = i + 1, k = k + 1",
+            "A[k] = l[i]\ni = i + 1, k = k + 1",
             "while j < right",
-            "A[k] = r[j]\r\nj = j + 1, k = k + 1"
+            "A[k] = r[j]\nj = j + 1, k = k + 1"
         };
 
         // Ensure the index is within bounds

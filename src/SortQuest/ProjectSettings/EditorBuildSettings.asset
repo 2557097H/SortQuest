@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BubbleSortLevelOne.unity
     guid: 4e88eea1bcbaa814d9d5eb05f7062e12
   - enabled: 1
-    path: Assets/Scenes/BubleSortLevelTwo.unity
+    path: Assets/Scenes/BubbleSortLevelTwo.unity
     guid: fd594bbf8e7814d42961b2442fc8c925
   - enabled: 1
     path: Assets/Scenes/QuickSortStory.unity
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MergeSortLevelOne.unity
     guid: 92b774ab965e8734eb1f75a8ef1a3591
+  - enabled: 1
+    path: Assets/Scenes/MergeSortLevelTwo.unity
+    guid: 7eecfaa63b59a904e848e3892756f41d
   m_configObjects: {}

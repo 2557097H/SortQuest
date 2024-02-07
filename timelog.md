@@ -271,6 +271,18 @@
 
 * *1 hour* finishing touches to bubble sort map
 
+## 2nd Feb 2023
+
+* *6 hour* Completed quick sort map, created rotating saws
+
+## 3rd Feb 2023
+
+* *4 hour* Completed half of merge sort map
+
+## 6th Feb
+* *4 hour* Implemented checkpoints, trigger events and canvases to start challenges
+* *3 hour* Added pseudocode/visualizations to challenges for extra help, and done a lot of debugging.
+
 -Deploying app
 -Customisation of avatars
 -Profiles

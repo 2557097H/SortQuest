@@ -25,7 +25,7 @@ public class QuickSortLevelOneCheckerPartOne : MonoBehaviour
         // Check the order
         for (int i = 0; i < codeBlocks.Count; i++)
         {
-            if (codeBlocks[i].text != GetExpectedCodeBlockText(i))
+            if (codeBlocks[i].text.ToLower().Replace(" ", "") != GetExpectedCodeBlockText(i).ToLower().Replace(" ", ""))
             {
                 checkText.text = "Not correct order - try again";
                 return;

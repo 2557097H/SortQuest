@@ -126,9 +126,6 @@ public class MergeSortLevelTwo : MonoBehaviour
         
         }
 
-        Debug.Log("Intermediate List: " + string.Join(", ", mergeHistory));
-        Debug.Log("Intermediate List: " + string.Join(", ", mergeHistoryChecker));
-
         if (mergeHistoryChecker.SequenceEqual(mergeHistory))
         {
             resultText.text = "Correct - Well Done";

@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Trap
   - Chest
-  - Board
+  - Bridge
+  - Food
+  - WoodLogs
+  - ToSort
   layers:
   - Default
   - TransparentFX

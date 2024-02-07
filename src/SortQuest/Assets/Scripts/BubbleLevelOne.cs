@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InputFieldChecker : MonoBehaviour
+public class BubbleLevelOne : MonoBehaviour
 {
     public TMP_InputField inputOne;
     public TMP_InputField inputTwo;

@@ -104,6 +104,8 @@ public class BubbleSortLevelTwo : MonoBehaviour
                         if (steps == history.Count)
                         {
                             continueButton.gameObject.SetActive(true);
+                            PlayerPrefs.SetInt("BridgeActive", 1);
+                            PlayerPrefs.Save();
                         }
                     }
                     catch (Exception ex)

@@ -3087,7 +3087,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 565339499}
         m_TargetAssemblyTypeName: SceneSelector, Assembly-CSharp
-        m_MethodName: SwitchSceneBubbleStory
+        m_MethodName: SwitchSceneStory
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

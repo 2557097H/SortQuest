@@ -5,19 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSelector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void SwitchSceneBubbleStory(string sceneName)
+    public void SwitchSceneStory(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
 
