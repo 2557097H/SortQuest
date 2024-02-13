@@ -14,6 +14,8 @@ public class InitiateLevel : MonoBehaviour
     private static bool bridgeTriggered = false;
     private static bool foodTriggered = false;
     private static bool woodLogsTriggered = false;
+    private static bool directionsTriggered = false;
+    private static bool castleTriggered = false;
 
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
@@ -32,15 +34,26 @@ public class InitiateLevel : MonoBehaviour
             LoadLevelOne();
             foodTriggered = true;
         }
-        else if (!woodLogsTriggered && collider2D.gameObject.CompareTag("WoodLogs"))
+        else if (!directionsTriggered && collider2D.gameObject.CompareTag("Directions"))
         {
             LoadLevelTwo();
+            directionsTriggered = true;
+        }
+        else if (!castleTriggered && collider2D.gameObject.CompareTag("Castle"))
+        {
+            LoadLevelTwo();
+            castleTriggered = true;
+        }
+        else if (!woodLogsTriggered && collider2D.gameObject.CompareTag("WoodLogs"))
+        {
+            LoadLevelOne();
             woodLogsTriggered = true;
         }
         else if (collider2D.gameObject.CompareTag("ToSort"))
         {
             canvasSort.SetActive(true);
             player.SetActive(false);
+            
         }
         /*
         else if (!mergeLevelOneTriggered && collider2D.gameObject.CompareTag("n/a"))

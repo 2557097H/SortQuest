@@ -10,6 +10,8 @@ TagManager:
   - Food
   - WoodLogs
   - ToSort
+  - Castle
+  - Directions
   layers:
   - Default
   - TransparentFX

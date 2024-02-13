@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2653ccc03505f4f8f5117358413fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallingDurationThreshold: 5
 --- !u!111 &7052475
 Animation:
   m_ObjectHideFlags: 0
@@ -11128,7 +11129,7 @@ GameObject:
   - component: {fileID: 1225122517}
   m_Layer: 5
   m_Name: QuickLevelOneCanvas
-  m_TagString: Untagged
+  m_TagString: Directions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

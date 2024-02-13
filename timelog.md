@@ -283,6 +283,12 @@
 * *4 hour* Implemented checkpoints, trigger events and canvases to start challenges
 * *3 hour* Added pseudocode/visualizations to challenges for extra help, and done a lot of debugging.
 
+## 7th Feb
+* *0.5 hour* Meeting with supervisor
+* 4 hour* Finished merge sort map
+
+## 8th Feb
+
 -Deploying app
 -Customisation of avatars
 -Profiles

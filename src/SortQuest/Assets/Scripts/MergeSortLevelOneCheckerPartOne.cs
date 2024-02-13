@@ -27,6 +27,8 @@ public class MergeSortLevelOneCheckerPartOne : MonoBehaviour
         {
             if (codeBlocks[i].text.ToLower().Replace(" ", "").Trim() != GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim())
             {
+                Debug.Log(codeBlocks[i].text.ToLower().Replace(" ", "").Trim());
+                Debug.Log(GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim());
                 checkText.text = "Not correct order - try again";
                 return;
             }
@@ -45,10 +47,10 @@ public class MergeSortLevelOneCheckerPartOne : MonoBehaviour
         string[] expectedOrder =
         {
             "procedure mergeSort(A: list, n: integer)",
-            "if n < 2\n    return",
+            "if n < 2\nreturn",
             "mid = n / 2\nl = new list[mid], r = new list[n - mid]",
-            "for i from 0 to mid - 1\n    l[i] = A[i]",
-            "for i from mid to n - 1\n    r[i - mid] = A[i]",
+            "for i from 0 to mid - 1\nl[i] = A[i]",
+            "for i from mid to n - 1\nr[i - mid] = A[i]",
             "mergeSort(l, mid)",
             "mergeSort(r, n - mid)",
             "merge(A, l, r, mid, n - mid)"
