@@ -287,10 +287,23 @@
 * *0.5 hour* Meeting with supervisor
 * 4 hour* Finished merge sort map
 
-## 8th Feb
+## 9th Feb
+
+* *4 hour* Created visualizatoins for bubble sort and quicksort
+
+## 12th Feb
+
+* *3 hour* Started visualization on merge sort but much harder to code than other two
 
 -Deploying app
 -Customisation of avatars
 -Profiles
 -Map designs
 -Practice mode
+
+How long it will take to do each stage
+ask question beofre and after to see difference
+system usabillity
+game features
+algorithm features
+skill increase

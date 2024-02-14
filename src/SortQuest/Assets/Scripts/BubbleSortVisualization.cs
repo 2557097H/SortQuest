@@ -1,15 +1,54 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class BubbleSortVisualization : MonoBehaviour
 {
     public GameObject[] numberObjects;
     public float swapDelay = 1.0f;
 
-    private void Start()
+    public TextMeshProUGUI stateText; // Text element to display the state
+    private bool isPlaying = false; // Flag to control play/pause
+    private bool isPaused = false; // Flag to indicate if the coroutine is paused
+    private int count = 0;
+
+    void Start()
     {
-        StartCoroutine(BubbleSortAnimation());
+
+    }
+
+    void Update()
+    {
+        // No need for keyboard input checking here, as buttons will handle it
+    }
+
+    public void TogglePlayPause()
+    {
+        isPlaying = !isPlaying;
+
+        if (!isPlaying)
+        {
+            isPaused = true; // Set the flag to pause the coroutine
+        }
+        else
+        {
+            if (count == 0)
+            {
+                StartCoroutine(BubbleSortAnimation());
+                count++;
+            }
+            isPaused = false; // Set the flag to resume the coroutine
+        }
+
+        UpdateStateText();
+    }
+
+    void UpdateStateText()
+    {
+        Debug.Log(count);
+        stateText.text = isPlaying ? "Playing" : (count == 2 ? "Finished" : "Paused");
+        Debug.Log(stateText.text);
     }
 
     IEnumerator BubbleSortAnimation()
@@ -20,13 +59,26 @@ public class BubbleSortVisualization : MonoBehaviour
         {
             for (int j = 0; j < n - i - 1; j++)
             {
-                // Compare and swap if needed
+                if (!isPlaying)
+                {
+                    while (isPaused)
+                    {
+                        yield return null; // Wait until resumed
+                    }
+                }
+
                 if (GetNumber(numberObjects[j]) > GetNumber(numberObjects[j + 1]))
                 {
                     yield return StartCoroutine(SwapObjects(numberObjects[j], numberObjects[j + 1]));
                 }
             }
+
+            yield return new WaitForSeconds(swapDelay);
         }
+
+        count = 2;
+        isPlaying = false;
+        UpdateStateText();
     }
 
     IEnumerator SwapObjects(GameObject obj1, GameObject obj2)
@@ -34,14 +86,11 @@ public class BubbleSortVisualization : MonoBehaviour
         Vector3 pos1 = obj1.transform.localPosition;
         Vector3 pos2 = obj2.transform.localPosition;
 
-        // Move objects to swap positions
         StartCoroutine(MoveObject(obj1, pos2, swapDelay));
         StartCoroutine(MoveObject(obj2, pos1, swapDelay));
 
-        // Wait for the swap to complete
         yield return new WaitForSeconds(swapDelay);
 
-        // Swap positions in the array
         int index1 = System.Array.IndexOf(numberObjects, obj1);
         int index2 = System.Array.IndexOf(numberObjects, obj2);
         SwapArrayElements(numberObjects, index1, index2);
@@ -56,15 +105,28 @@ public class BubbleSortVisualization : MonoBehaviour
         {
             obj.transform.localPosition = Vector3.Lerp(startingPos, targetPosition, (elapsedTime / duration));
             elapsedTime += Time.deltaTime;
+
+            if (!isPlaying)
+            {
+                isPaused = true; // Pause the coroutine
+            }
+
             yield return null;
         }
 
         obj.transform.localPosition = targetPosition;
+
+        if (!isPlaying)
+        {
+            while (isPaused)
+            {
+                yield return null; // Wait until resumed
+            }
+        }
     }
 
     int GetNumber(GameObject obj)
     {
-        // Assuming the TMP text is a direct child of the GameObject
         TextMeshProUGUI tmpText = obj.GetComponentInChildren<TextMeshProUGUI>();
 
         if (tmpText != null && int.TryParse(tmpText.text, out int number))
@@ -72,7 +134,6 @@ public class BubbleSortVisualization : MonoBehaviour
             return number;
         }
 
-        // Return a default value if the number couldn't be retrieved
         return 0;
     }
 

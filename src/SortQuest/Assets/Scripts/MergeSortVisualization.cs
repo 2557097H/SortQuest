@@ -1,128 +1,124 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System.Threading;
 
 public class MergeSortVisualization : MonoBehaviour
 {
-    public GameObject[] numberObjects;
-    public float swapDelay = 1.0f;
+    public GameObject content;
+    public float activationDelay = 0.5f;
 
-    private Vector3[] originalPositions;
+    public TextMeshProUGUI stateText; // Text element to display the state
+    private bool isPlaying = false; // Flag to control play/pause
+    private bool isPaused = false; // Flag to indicate if the coroutine is paused
+    private int count = 0;
 
-    private void Start()
+    void Start()
     {
-        originalPositions = new Vector3[numberObjects.Length];
-        for (int i = 0; i < numberObjects.Length; i++)
-        {
-            originalPositions[i] = numberObjects[i].transform.localPosition;
-        }
 
-        StartCoroutine(MergeSortAnimation(numberObjects, 0, numberObjects.Length - 1));
     }
 
-    IEnumerator MergeSortAnimation(GameObject[] array, int left, int right)
+    void Update()
     {
-        if (left < right)
-        {
-            int middle = (left + right) / 2;
-
-            yield return StartCoroutine(MergeSortAnimation(array, left, middle));
-            yield return StartCoroutine(MergeSortAnimation(array, middle + 1, right));
-
-            yield return StartCoroutine(Merge(array, left, middle, right));
-        }
+        // No need for keyboard input checking here, as buttons will handle it
     }
 
-    IEnumerator Merge(GameObject[] array, int left, int middle, int right)
+    public void TogglePlayPause()
     {
-        int leftSize = middle - left + 1;
-        int rightSize = right - middle;
+        isPlaying = !isPlaying;
 
-        GameObject[] leftArray = new GameObject[leftSize];
-        GameObject[] rightArray = new GameObject[rightSize];
-
-        // Temporarily hide original objects
-        for (int i = left; i <= right; i++)
+        if (!isPlaying)
         {
-            array[i].SetActive(false);
+            isPaused = true; // Set the flag to pause the coroutine
         }
-
-        // Move original objects to new positions
-        for (int i = 0; i < leftSize; i++)
+        else
         {
-            array[left + i].transform.localPosition = new Vector3(originalPositions[left + i].x - 5, 10, 0);
-            leftArray[i] = array[left + i];
-            leftArray[i].SetActive(true);
-            yield return new WaitForSeconds(swapDelay);
-        }
-
-        for (int j = 0; j < rightSize; j++)
-        {
-            array[middle + 1 + j].transform.localPosition = new Vector3(originalPositions[middle + 1 + j].x + 5, 5, 0);
-            rightArray[j] = array[middle + 1 + j];
-            rightArray[j].SetActive(true);
-            yield return new WaitForSeconds(swapDelay);
-        }
-
-        int leftIndex = 0;
-        int rightIndex = 0;
-        int mergedIndex = left;
-
-        // Merge the temporary arrays back into the original array
-        while (leftIndex < leftSize && rightIndex < rightSize)
-        {
-            if (GetNumber(leftArray[leftIndex]) <= GetNumber(rightArray[rightIndex]))
+            if (count == 0)
             {
-                array[mergedIndex] = leftArray[leftIndex];
-                leftIndex++;
+                StartCoroutine(MergeSortVisualizationCoroutine(content.transform));
+                count++;
             }
-            else
-            {
-                array[mergedIndex] = rightArray[rightIndex];
-                rightIndex++;
-            }
-
-            yield return new WaitForSeconds(swapDelay);
-            mergedIndex++;
+            isPaused = false; // Set the flag to resume the coroutine
         }
 
-        // Copy remaining elements if any
-        while (leftIndex < leftSize)
-        {
-            array[mergedIndex] = leftArray[leftIndex];
-            leftIndex++;
-            mergedIndex++;
-            yield return new WaitForSeconds(swapDelay);
-        }
-
-        while (rightIndex < rightSize)
-        {
-            array[mergedIndex] = rightArray[rightIndex];
-            rightIndex++;
-            mergedIndex++;
-            yield return new WaitForSeconds(swapDelay);
-        }
-
-        // Reset the original positions of the merged elements
-        for (int i = left; i <= right; i++)
-        {
-            array[i].transform.localPosition = originalPositions[i];
-            array[i].SetActive(true);
-            yield return new WaitForSeconds(swapDelay);
-        }
+        UpdateStateText();
     }
 
-    int GetNumber(GameObject obj)
+    void UpdateStateText()
     {
-        // Assuming the TMP text is a direct child of the GameObject
-        TextMeshProUGUI tmpText = obj.GetComponentInChildren<TextMeshProUGUI>();
+        stateText.text = isPlaying ? "Playing" : (count == 2 ? "Finished" : "Paused");
+    }
 
-        if (tmpText != null && int.TryParse(tmpText.text, out int number))
+    IEnumerator MergeSortVisualizationCoroutine(Transform parent)
+    {
+        if (parent.childCount > 0)
         {
-            return number;
+            for (int i = 1; i < parent.childCount; i++)
+            {
+                Transform gameObjectContainer = parent.GetChild(i);
+
+                if (!isPlaying)
+                {
+                    yield return null; // Pause the coroutine
+                }
+
+                if (gameObjectContainer.name.Contains("List"))
+                {
+                    if (gameObjectContainer.childCount > 0)
+                    {
+                        Transform grid = gameObjectContainer.Find("Grid");
+
+                        if (grid != null && grid.childCount > 0)
+                        {
+                            for (int j = 0; j < grid.childCount; j++)
+                            {
+                                Transform slot = grid.GetChild(j);
+
+                                if (slot.childCount > 0)
+                                {
+                                    slot.GetChild(0).gameObject.SetActive(true);
+
+                                    // Wait for the specified delay before activating the next game object
+                                    float timer = 0f;
+                                    while (timer < activationDelay)
+                                    {
+                                        if (!isPaused)
+                                        {
+                                            timer += Time.deltaTime;
+                                        }
+                                        yield return null;
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.LogWarning("Slot at index " + j + " in grid of game object container at index " + i + " is empty.");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogWarning("Grid is missing or empty in game object container at index " + i + ".");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Game object container at index " + i + " is empty.");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Game object container at index " + i + " does not contain 'List' in its name.");
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Content is empty.");
         }
 
-        // Return a default value if the number couldn't be retrieved
-        return 0;
+        count = 2;
+        isPlaying = false;
+        UpdateStateText();
     }
 }

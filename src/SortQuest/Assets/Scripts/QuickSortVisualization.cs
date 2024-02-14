@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class QuickSortVisualization : MonoBehaviour
 {
@@ -8,9 +9,47 @@ public class QuickSortVisualization : MonoBehaviour
     public float swapDelay = 1.0f;
     public float pivotDisplayDelay = 1.5f;
 
-    private void Start()
+    public TextMeshProUGUI stateText; // Text element to display the state
+    private bool isPlaying = false; // Flag to control play/pause
+    private bool isPaused = false; // Flag to indicate if the coroutine is paused
+    private int count = 0;
+
+    void Start()
     {
-        StartCoroutine(QuickSortAnimation(0, numberObjects.Length - 1));
+
+    }
+
+    void Update()
+    {
+        // No need for keyboard input checking here, as buttons will handle it
+    }
+
+    public void TogglePlayPause()
+    {
+        isPlaying = !isPlaying;
+
+        if (isPlaying)
+        {
+            isPaused = false;
+            if(count == 0)
+            {
+                StartCoroutine(QuickSortAnimation(0, numberObjects.Length - 1));
+                count++;
+
+            }
+            
+        }
+        else
+        {
+            isPaused = true;
+        }
+
+        UpdateStateText();
+    }
+
+    void UpdateStateText()
+    {
+        stateText.text = isPlaying ? "Playing" : (count == 2 ? "Finished" : "Paused");
     }
 
     IEnumerator QuickSortAnimation(int low, int high)
@@ -27,6 +66,12 @@ public class QuickSortVisualization : MonoBehaviour
                 yield return StartCoroutine(QuickSortAnimation(low, partitionIndex - 1));
                 yield return StartCoroutine(QuickSortAnimation(partitionIndex + 1, high));
             }
+
+            if (partitionIndex == 5){
+                count = 2;
+                isPlaying = false;
+            }
+            UpdateStateText();
         }
     }
 
@@ -39,12 +84,19 @@ public class QuickSortVisualization : MonoBehaviour
 
         bool swapsOccurred = false;
 
-        // Create and show the pivot text
         GameObject pivotTextObj = CreateTextObject("Pivot: " + pivot.ToString(), array[high]);
         yield return new WaitForSeconds(pivotDisplayDelay);
 
         for (int j = low; j < high; j++)
         {
+            if (!isPlaying)
+            {
+                while (isPaused)
+                {
+                    yield return null; // Wait until resumed
+                }
+            }
+
             if (GetNumber(array[j]) < pivot)
             {
                 i++;
@@ -56,7 +108,6 @@ public class QuickSortVisualization : MonoBehaviour
         yield return StartCoroutine(SwapObjects(array[i + 1], array[high], duration));
         PartitionIndex = i + 1;
 
-        // Change the text of the pivot object
         ChangePivotText(pivotTextObj, "Pivot Complete");
 
         setSwapsOccurred(swapsOccurred);
@@ -67,11 +118,9 @@ public class QuickSortVisualization : MonoBehaviour
         Vector3 pos1 = obj1.transform.localPosition;
         Vector3 pos2 = obj2.transform.localPosition;
 
-        // Move objects to swap positions
         yield return StartCoroutine(MoveObject(obj1, pos2, duration));
         yield return StartCoroutine(MoveObject(obj2, pos1, duration));
 
-        // Swap positions in the array
         int index1 = System.Array.IndexOf(numberObjects, obj1);
         int index2 = System.Array.IndexOf(numberObjects, obj2);
         SwapArrayElements(numberObjects, index1, index2);
@@ -86,15 +135,28 @@ public class QuickSortVisualization : MonoBehaviour
         {
             obj.transform.localPosition = Vector3.Lerp(startingPos, targetPosition, (elapsedTime / duration));
             elapsedTime += Time.deltaTime;
+
+            if (!isPlaying)
+            {
+                isPaused = true; // Pause the coroutine
+            }
+
             yield return null;
         }
 
         obj.transform.localPosition = targetPosition;
+
+        if (!isPlaying)
+        {
+            while (isPaused)
+            {
+                yield return null; // Wait until resumed
+            }
+        }
     }
 
     int GetNumber(GameObject obj)
     {
-        // Assuming the TMP text is a direct child of the GameObject
         TextMeshProUGUI tmpText = obj.GetComponentInChildren<TextMeshProUGUI>();
 
         if (tmpText != null && int.TryParse(tmpText.text, out int number))
@@ -102,7 +164,6 @@ public class QuickSortVisualization : MonoBehaviour
             return number;
         }
 
-        // Return a default value if the number couldn't be retrieved
         return 0;
     }
 
