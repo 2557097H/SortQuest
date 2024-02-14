@@ -433,6 +433,7 @@
 "Assets/Scripts/MergeSortLevelOneCheckerPartTwo.cs"
 "Assets/Scripts/MergeSortLevelTwo.cs"
 "Assets/Scripts/MergeSortVisualization.cs"
+"Assets/Scripts/PanelController.cs"
 "Assets/Scripts/Parallax.cs"
 "Assets/Scripts/ParsonsProblems.cs"
 "Assets/Scripts/PlayerMovement.cs"

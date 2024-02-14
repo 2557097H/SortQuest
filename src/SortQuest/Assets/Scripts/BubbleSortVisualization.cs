@@ -7,6 +7,9 @@ public class BubbleSortVisualization : MonoBehaviour
 {
     public GameObject[] numberObjects;
     public float swapDelay = 1.0f;
+    public Button resetButton;
+    private GameObject[] originalPositions = new GameObject[7];
+    private Vector3[] originalPositionTransforms = new Vector3[7];
 
     public TextMeshProUGUI stateText; // Text element to display the state
     private bool isPlaying = false; // Flag to control play/pause
@@ -15,12 +18,8 @@ public class BubbleSortVisualization : MonoBehaviour
 
     void Start()
     {
-
-    }
-
-    void Update()
-    {
-        // No need for keyboard input checking here, as buttons will handle it
+        // Store the original positions of all child objects
+        SaveOriginalPositions();
     }
 
     public void TogglePlayPause()
@@ -46,9 +45,9 @@ public class BubbleSortVisualization : MonoBehaviour
 
     void UpdateStateText()
     {
-        Debug.Log(count);
+        
         stateText.text = isPlaying ? "Playing" : (count == 2 ? "Finished" : "Paused");
-        Debug.Log(stateText.text);
+
     }
 
     IEnumerator BubbleSortAnimation()
@@ -143,4 +142,39 @@ public class BubbleSortVisualization : MonoBehaviour
         array[index1] = array[index2];
         array[index2] = temp;
     }
+    void SaveOriginalPositions()
+    {
+        int objectCount = numberObjects.Length;
+       
+        for (int i = 0; i < objectCount; i++)
+        {
+            originalPositions[i] = numberObjects[i];
+            originalPositionTransforms[i] = numberObjects[i].transform.position;
+
+        }
+    }
+
+    void ResetObjectPositions()
+    {
+        int objectCount = numberObjects.Length;
+
+        for (int i = 0; i < objectCount; i++)
+        {
+            numberObjects[i] = originalPositions[i];
+            numberObjects[i].transform.position = originalPositionTransforms[i];
+
+        }
+    }
+
+    public void Reset()
+    {
+        StopAllCoroutines(); // Stop any running coroutines
+        ResetObjectPositions(); // Reset object positions
+        count = 0; // Reset the count
+        isPlaying = false; // Reset the play/pause state
+        isPaused = false; // Reset the pause state
+        UpdateStateText(); // Update the state text
+       
+    }
+
 }

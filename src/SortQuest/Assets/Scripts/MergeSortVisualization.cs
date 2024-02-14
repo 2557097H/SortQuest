@@ -14,9 +14,10 @@ public class MergeSortVisualization : MonoBehaviour
     private bool isPaused = false; // Flag to indicate if the coroutine is paused
     private int count = 0;
 
+    private Coroutine mergeSortCoroutine;
+
     void Start()
     {
-
     }
 
     void Update()
@@ -36,7 +37,7 @@ public class MergeSortVisualization : MonoBehaviour
         {
             if (count == 0)
             {
-                StartCoroutine(MergeSortVisualizationCoroutine(content.transform));
+                mergeSortCoroutine = StartCoroutine(MergeSortVisualizationCoroutine(content.transform));
                 count++;
             }
             isPaused = false; // Set the flag to resume the coroutine
@@ -121,4 +122,53 @@ public class MergeSortVisualization : MonoBehaviour
         isPlaying = false;
         UpdateStateText();
     }
-}
+
+    public void Reset()
+    {
+        StopAllCoroutines(); // Stop any running coroutines, including MergeSortVisualizationCoroutine
+        ResetShieldStates(content.transform); // Reset shield states (set all shields to inactive)
+        count = 0; // Reset the count
+        isPlaying = false; // Reset the play/pause state
+        isPaused = false; // Reset the pause state
+        UpdateStateText(); // Update the state text
+    }
+
+    void ResetShieldStates(Transform parent)
+    {
+        var firstListCount = 0;
+        foreach (Transform child in parent)
+        {
+            if (firstListCount == 0)
+            {
+
+                firstListCount++;
+                continue;
+
+            }
+            if (child.name.Contains("List"))
+            {
+                // Reset shields within the slots
+                Transform grid = child.Find("Grid");
+                if (grid != null)
+                {
+                    for (int j = 0; j < grid.childCount; j++)
+                    {
+                        Transform slot = grid.GetChild(j);
+                        if (slot.childCount > 0)
+                        {
+                            GameObject shield = slot.GetChild(0).gameObject;
+                            if (shield != null)
+                            {
+                                shield.SetActive(false);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ResetShieldStates(child);
+            }
+        }
+    }
+} 

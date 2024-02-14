@@ -12,6 +12,7 @@ TagManager:
   - ToSort
   - Castle
   - Directions
+  - PivotText
   layers:
   - Default
   - TransparentFX

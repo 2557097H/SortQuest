@@ -8,6 +8,8 @@ public class QuickSortVisualization : MonoBehaviour
     public GameObject[] numberObjects;
     public float swapDelay = 1.0f;
     public float pivotDisplayDelay = 1.5f;
+    private GameObject[] originalPositions = new GameObject[7];
+    private Vector3[] originalPositionTransforms = new Vector3[7];
 
     public TextMeshProUGUI stateText; // Text element to display the state
     private bool isPlaying = false; // Flag to control play/pause
@@ -16,7 +18,7 @@ public class QuickSortVisualization : MonoBehaviour
 
     void Start()
     {
-
+        SaveOriginalPositions();
     }
 
     void Update()
@@ -177,6 +179,7 @@ public class QuickSortVisualization : MonoBehaviour
     GameObject CreateTextObject(string text, GameObject parent)
     {
         GameObject textObj = new GameObject("PivotText");
+        textObj.tag = "PivotText"; // Set the tag
         textObj.transform.SetParent(parent.transform);
         textObj.transform.localPosition = new Vector3(18, -50, 0); // Adjust the position as needed
 
@@ -188,12 +191,56 @@ public class QuickSortVisualization : MonoBehaviour
         return textObj;
     }
 
+
     void ChangePivotText(GameObject pivotTextObj, string newText)
     {
         TextMeshProUGUI textMesh = pivotTextObj.GetComponentInChildren<TextMeshProUGUI>();
         if (textMesh != null)
         {
             textMesh.text = newText;
+        }
+    }
+
+    void SaveOriginalPositions()
+    {
+        int objectCount = numberObjects.Length;
+
+        for (int i = 0; i < objectCount; i++)
+        {
+            originalPositions[i] = numberObjects[i];
+            originalPositionTransforms[i] = numberObjects[i].transform.position;
+
+        }
+    }
+
+    void ResetObjectPositions()
+    {
+        int objectCount = numberObjects.Length;
+
+        for (int i = 0; i < objectCount; i++)
+        {
+            numberObjects[i] = originalPositions[i];
+            numberObjects[i].transform.position = originalPositionTransforms[i];
+
+        }
+    }
+
+    public void Reset()
+    {
+        StopAllCoroutines(); // Stop any running coroutines
+        DestroyPivotTextObjects(); // Destroy pivot text objects
+        ResetObjectPositions(); // Reset object positions
+        count = 0; // Reset the count
+        isPlaying = false; // Reset the play/pause state
+        isPaused = false; // Reset the pause state
+        UpdateStateText(); // Update the state text
+    }
+
+    void DestroyPivotTextObjects()
+    {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PivotText"))
+        {
+            Destroy(obj);
         }
     }
 }
