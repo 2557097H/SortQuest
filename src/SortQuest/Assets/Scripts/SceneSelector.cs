@@ -7,6 +7,7 @@ public class SceneSelector : MonoBehaviour
 {
     public void SwitchSceneStory(string sceneName)
     {
+        PlayerPrefs.SetInt("PracticeMode", 0);
         SceneManager.LoadScene(sceneName);
 
     }

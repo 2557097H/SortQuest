@@ -14,7 +14,7 @@ public class BubbleSortLevelTwo : MonoBehaviour
     public TMP_Text resultText;
     public TMP_Text currentStep;
     public Button continueButton;
-    
+
 
     private int steps = 0;
     private int[] woodNumberArrayCopy;
@@ -22,13 +22,21 @@ public class BubbleSortLevelTwo : MonoBehaviour
     private List<int[]> history = new System.Collections.Generic.List<int[]>();
 
 
+
+
+
     void Start()
     {
+
         history = BubbleSort(numbers);
         stepText.text = "Step: " + "1/" + (history.Count+1);
         woodNumberArrayCopy = woodNumberArray;
         currentStep.text = "Current Step" + "[" + string.Join(", ", woodNumberArrayCopy) + "]";
+ 
+
     }
+
+
 
     System.Collections.Generic.List<int[]> BubbleSort(int[] arr)
     {
@@ -103,6 +111,7 @@ public class BubbleSortLevelTwo : MonoBehaviour
 
                         if (steps == history.Count)
                         {
+                          
                             continueButton.gameObject.SetActive(true);
                             PlayerPrefs.SetInt("BridgeActive", 1);
                             PlayerPrefs.Save();
@@ -154,4 +163,5 @@ public class BubbleSortLevelTwo : MonoBehaviour
         
         
     }
+
 }

@@ -8,21 +8,27 @@ public class BubbleLevelOne : MonoBehaviour
     public TMP_InputField inputTwo;
     public TMP_InputField inputThree;
     public TMP_InputField inputFour;
-    public Button continueButton; 
+    public Button continueButton;
+ 
 
     private bool inputOneCorrect;
     private bool inputTwoCorrect;
     private bool inputThreeCorrect;
     private bool inputFourCorrect;
 
+
     private void Start()
     {
+   
+
         // Subscribe to the "onValueChanged" events for each input field
         inputOne.onValueChanged.AddListener(delegate { CheckInputField(inputOne, "length"); });
         inputTwo.onValueChanged.AddListener(delegate { CheckInputField(inputTwo, "n-1"); });
         inputThree.onValueChanged.AddListener(delegate { CheckInputField(inputThree, "A[j] > A[j+1]"); });
         inputFour.onValueChanged.AddListener(delegate { CheckInputField(inputFour, "swap"); });
+
     }
+
 
     void CheckInputField(TMP_InputField inputField, string correctValue)
     {
@@ -47,6 +53,11 @@ public class BubbleLevelOne : MonoBehaviour
             inputFourCorrect = isCorrect;
 
         // Check if all inputs are correct and show/hide the "Continue" button
-        continueButton.gameObject.SetActive(inputOneCorrect && inputTwoCorrect && inputThreeCorrect && inputFourCorrect);
+        if (inputOneCorrect && inputTwoCorrect && inputThreeCorrect && inputFourCorrect)
+        {
+            continueButton.gameObject.SetActive(true);
+        }
+        
     }
+
 }

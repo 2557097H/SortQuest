@@ -295,6 +295,19 @@
 
 * *3 hour* Started visualization on merge sort but much harder to code than other two
 
+## 13th Feb 
+
+* *0.5 hour* Meeting with supervisor
+* *3 hour* Finished merge sort visualization
+
+## 14th Feb
+
+* *7 hour* Added Play, pause and reset capabillities to the visualizations and added them to the pseudocode challenges for additional help
+
+## 16th Feb
+
+*
+
 -Deploying app
 -Customisation of avatars
 -Profiles

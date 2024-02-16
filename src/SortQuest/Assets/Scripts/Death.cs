@@ -10,6 +10,7 @@ public class Death : MonoBehaviour
     private float fallingTimer = 0f;
     private bool isFalling = false;
     public float fallingDurationThreshold = 5f;
+    private bool hasDied;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,11 +52,26 @@ public class Death : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Trap") && !hasDied)
+        {
+            hasDied = true;  
+            Die();
+        }
+    }
+
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
+        StartCoroutine(RestartAfterDelay()); 
+    }
 
+    private IEnumerator RestartAfterDelay()
+    {
+        yield return new WaitForSeconds(1.5f); 
+        RestartLevel();
     }
 
     private void RestartLevel()
