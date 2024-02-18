@@ -13,6 +13,7 @@ TagManager:
   - Castle
   - Directions
   - PivotText
+  - Sword
   layers:
   - Default
   - TransparentFX

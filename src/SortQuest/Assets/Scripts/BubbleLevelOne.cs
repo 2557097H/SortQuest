@@ -16,6 +16,8 @@ public class BubbleLevelOne : MonoBehaviour
     private bool inputThreeCorrect;
     private bool inputFourCorrect;
 
+    [SerializeField] AudioSource finishSound;
+
 
     private void Start()
     {
@@ -55,8 +57,11 @@ public class BubbleLevelOne : MonoBehaviour
         // Check if all inputs are correct and show/hide the "Continue" button
         if (inputOneCorrect && inputTwoCorrect && inputThreeCorrect && inputFourCorrect)
         {
+            finishSound.Play();
             continueButton.gameObject.SetActive(true);
         }
+
+
         
     }
 

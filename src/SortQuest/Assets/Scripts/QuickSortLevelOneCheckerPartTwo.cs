@@ -9,11 +9,11 @@ public class QuickSortLevelOneCheckerPartTwo : MonoBehaviour
     public TMP_Text checkText;
     public TMP_Text continueText;
     public Button continueButton;
+    [SerializeField] AudioSource finishSound;
 
     // Check the order of code blocks
     public void CheckCodeBlockOrder()
     {
-        // Assuming you have a list of TextMeshPro components in the correct order
         List<TMP_Text> codeBlocks = new List<TMP_Text>();
         foreach (Transform child in transform)
         {
@@ -36,13 +36,12 @@ public class QuickSortLevelOneCheckerPartTwo : MonoBehaviour
 
         checkText.text = "Correct Order - Well Done!";
         continueButton.gameObject.SetActive(true);
+        finishSound.Play();
         continueText.text = "Continue with story mode";
     }
 
-    // Get the expected text content of a code block based on its index
     private string GetExpectedCodeBlockText(int index)
     {
-        // Define the expected order based on your requirements
 
         string[] expectedOrder =
         {

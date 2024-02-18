@@ -13,6 +13,7 @@ public class MergeSortLevelTwo : MonoBehaviour
     private List<int> mergeHistoryChecker = new System.Collections.Generic.List<int>();
     public TMP_Text resultText;
     public Button continueButton;
+    [SerializeField] AudioSource finishSound;
 
     void Start()
     {
@@ -129,6 +130,7 @@ public class MergeSortLevelTwo : MonoBehaviour
         if (mergeHistoryChecker.SequenceEqual(mergeHistory))
         {
             resultText.text = "Correct - Well Done";
+            finishSound.Play();
             continueButton.gameObject.SetActive(true);
         }
         else

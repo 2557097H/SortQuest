@@ -306,7 +306,12 @@
 
 ## 16th Feb
 
-*
+* *1 hour* Debugging problems
+* *3 hour* Added practice mode which saves a time for each challenge for a user
+
+## 17th Feb
+
+*1 hour* Added end scene for story mode
 
 -Deploying app
 -Customisation of avatars

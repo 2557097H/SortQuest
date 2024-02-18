@@ -13,7 +13,15 @@ public class PracticeModeHandlerMergeSort : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("MergeSortStory");
+            if(SceneManager.GetActiveScene().name == "MergeSortLevelTwo")
+            {
+                SceneManager.LoadScene("FinalStoryScene");
+            }
+            else
+            {
+                SceneManager.LoadScene("MergeSortStory");
+            }
+            
         }
     }
 }

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/MergeSortLevelTwo.unity
+- path: Assets/Scenes/MergeSortStory.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

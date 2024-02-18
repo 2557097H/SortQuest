@@ -21,6 +21,7 @@ public class BubbleSortLevelTwo : MonoBehaviour
     private int[] numbers = { 2, 8, 5, 3, 9, 4, 1 };
     private List<int[]> history = new System.Collections.Generic.List<int[]>();
 
+    [SerializeField] AudioSource finishSound;
 
 
 
@@ -111,10 +112,9 @@ public class BubbleSortLevelTwo : MonoBehaviour
 
                         if (steps == history.Count)
                         {
-                          
+                            finishSound.Play();
                             continueButton.gameObject.SetActive(true);
                             PlayerPrefs.SetInt("BridgeActive", 1);
-                            PlayerPrefs.Save();
                         }
                     }
                     catch (Exception ex)

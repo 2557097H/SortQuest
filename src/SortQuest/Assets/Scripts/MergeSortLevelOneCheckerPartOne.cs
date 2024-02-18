@@ -9,6 +9,7 @@ public class MergeSortLevelOneCheckerPartOne : MonoBehaviour
     public TMP_Text checkText;
     public TMP_Text continueText;
     public Button continueButton;
+    [SerializeField] AudioSource finishSound;
 
     // Check the order of code blocks
     public void CheckCodeBlockOrder()
@@ -36,6 +37,7 @@ public class MergeSortLevelOneCheckerPartOne : MonoBehaviour
 
         checkText.text = "Correct Order - Well Done!";
         continueButton.gameObject.SetActive(true);
+        finishSound.Play();
         continueText.text = "Continue to merge pseudocode re-arrangement";
     }
 

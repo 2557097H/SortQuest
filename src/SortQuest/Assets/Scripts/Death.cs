@@ -11,6 +11,7 @@ public class Death : MonoBehaviour
     private bool isFalling = false;
     public float fallingDurationThreshold = 5f;
     private bool hasDied;
+    [SerializeField] private AudioSource deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +66,7 @@ public class Death : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
+        deathSound.Play();
         StartCoroutine(RestartAfterDelay()); 
     }
 

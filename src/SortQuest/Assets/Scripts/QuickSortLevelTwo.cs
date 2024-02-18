@@ -18,6 +18,7 @@ public class QuickSortLevelTwo : MonoBehaviour
 
 
 
+
     private int[] numbers = { 2, 8, 5, 9, 4, 1, 3 };
 
     private int steps = 0;
@@ -26,6 +27,7 @@ public class QuickSortLevelTwo : MonoBehaviour
     private List<int> woodNumberArrayCopy;
     private List<int> pivotList = new System.Collections.Generic.List<int>();
     private int pivot;
+    [SerializeField] AudioSource finishSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -153,6 +155,8 @@ public class QuickSortLevelTwo : MonoBehaviour
 
                 if (steps == history.Count)
                 {
+                    PlayerPrefs.SetInt("SignsActive", 1);
+                    finishSound.Play();
                     continueButton.gameObject.SetActive(true);
                 }
 

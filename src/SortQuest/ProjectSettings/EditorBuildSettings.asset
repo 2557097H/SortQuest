@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MergeSortLevelTwo.unity
     guid: 7eecfaa63b59a904e848e3892756f41d
+  - enabled: 1
+    path: Assets/Scenes/FinalStoryScene.unity
+    guid: de318d191f609d1499ffd403e569dbe7
   m_configObjects: {}

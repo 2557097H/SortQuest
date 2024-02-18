@@ -55,17 +55,11 @@ public class InitiateLevel : MonoBehaviour
             player.SetActive(false);
             
         }
-        /*
-        else if (!mergeLevelOneTriggered && collider2D.gameObject.CompareTag("n/a"))
+        else if (collider2D.gameObject.CompareTag("Sword"))
         {
-            LoadMergeLevelOne();
-            mergeLevelOneTriggered = true;
+            canvasSort.SetActive(true);
+            player.SetActive(false);
         }
-        else if (!mergeLevelTwoTriggered && collider2D.gameObject.CompareTag("n/a"))
-        {
-            LoadMergeLevelTwo();
-            mergeLevelTwoTriggered = true;
-        }*/
     }
 
     private void LoadLevelOne()

@@ -9,6 +9,7 @@ public class QuickSortLevelOneCheckerPartOne : MonoBehaviour
     public TMP_Text checkText;
     public TMP_Text continueText;
     public Button continueButton;
+    [SerializeField] AudioSource finishSound;
 
     // Check the order of code blocks
     public void CheckCodeBlockOrder()
@@ -33,6 +34,7 @@ public class QuickSortLevelOneCheckerPartOne : MonoBehaviour
         }
 
         checkText.text = "Correct Order - Well Done!";
+        finishSound.Play();
         continueButton.gameObject.SetActive(true);
         continueText.text = "Continue to partition pseudocode re-arrangement";
     }
