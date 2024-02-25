@@ -2085,6 +2085,18 @@ MonoBehaviour:
           m_StringArgument: MergeSortStory
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 935305113}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: publishTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &201719990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6749,7 +6761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -352.5551, y: -2744.558}
+  m_AnchoredPosition: {x: -352.5551, y: -2744.5564}
   m_SizeDelta: {x: 629.3066, y: -3493.6973}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &861463607
@@ -7170,6 +7182,14 @@ MonoBehaviour:
   timerBackground: {fileID: 1169115075}
   timerText: {fileID: 1816831544}
   continueButton: {fileID: 201719989}
+  user:
+    userName: 
+    bubbleSortLevelOne: 0
+    bubbleSortLevelTwo: 0
+    quickSortLevelOne: 0
+    quickSortLevelTwo: 0
+    mergeSortLevelOne: 0
+    mergeSortLevelTwo: 0
 --- !u!114 &935305114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15788,8 +15808,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 818512158}
   m_HandleRect: {fileID: 818512157}
   m_Direction: 2
-  m_Value: 1.0000008
-  m_Size: 0.27295506
+  m_Value: 0.9999999
+  m_Size: 0.27295247
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -917,6 +917,18 @@ MonoBehaviour:
           m_StringArgument: QuickSortStory
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 935305111}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: publishTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &201719990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3919,6 +3931,14 @@ MonoBehaviour:
   timerBackground: {fileID: 1364406655}
   timerText: {fileID: 2071274723}
   continueButton: {fileID: 201719989}
+  user:
+    userName: 
+    bubbleSortLevelOne: 0
+    bubbleSortLevelTwo: 0
+    quickSortLevelOne: 0
+    quickSortLevelTwo: 0
+    mergeSortLevelOne: 0
+    mergeSortLevelTwo: 0
 --- !u!82 &935305112
 AudioSource:
   m_ObjectHideFlags: 0

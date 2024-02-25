@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>NUnitLite</id>
+    <title>NUnitLite</title>
+    <version>$version$</version>
+    <authors>Charlie Poole, Rob Prouse</authors>
+    <owners>Charlie Poole, Rob Prouse</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://nunit.org</projectUrl>
+    <repository type="git" url="https://github.com/nunit/nunit"/>
+    <icon>icon.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>NUnitlite is a lightweight runner for tests that use the NUnit testing framework.</summary>
+    <description>NUnitLite provides a simple way to run NUnit tests, without the overhead of a full NUnit installation. It is suitable for projects that want to have a quick way to run tests using a console runner and don't need all the features of the NUnit engine and console runner.
+
+Supported platforms:
+- .NET Framework 4.6.2+
+- .NET 6.0+
+
+How to use this package:
+
+1. Create a console application for your tests and delete the generated class containing Main().
+2. Install the NUnitLite package, which creates a new Main() as well as adding a reference to NUnitLite. This will also bring in the NUnit package, which adds a reference to the NUnit framework to your project.
+3. Add your tests to the test project and simply start the project to execute them.</description>
+    <language>en-US</language>
+    <tags>test unit testing tdd framework fluent assert device phone embedded</tags>
+    <copyright>Copyright (c) Charlie Poole, Rob Prouse and Contributors. MIT License.</copyright>
+    <dependencies>
+      <group targetFramework="net462">
+        <dependency id="NUnit" version="[$version$]" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="NUnit" version="[$version$]" />
+      </group>
+	  <group targetFramework="net8.0">
+        <dependency id="NUnit" version="[$version$]" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="LICENSE.txt" />
+    <file src="NOTICES.md" />
+    <file src="CHANGES.md" />
+    <file src="THIRD_PARTY_NOTICES.md" />
+    <file src="..\..\nuget\icon.png" />
+    <file src="bin/net462/nunitlite.dll" target="lib\net462" />
+    <file src="bin/net462/nunitlite.pdb" target="lib\net462" />
+    <file src="bin/net462/nunitlite-runner.exe" target="tools\net462" />
+    <file src="bin/net462/nunitlite-runner.pdb" target="tools\net462" />
+    <file src="bin/net6.0/nunitlite.dll" target="lib\net6.0" />
+    <file src="bin/net6.0/nunitlite.pdb" target="lib\net6.0" />
+	<file src="bin/net8.0/nunitlite.dll" target="lib\net8.0" />
+    <file src="bin/net8.0/nunitlite.pdb" target="lib\net8.0" />
+  </files>
+</package>

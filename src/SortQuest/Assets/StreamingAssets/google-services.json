@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "537688308442",
+    "firebase_url": "https://sortquest-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sortquest",
+    "storage_bucket": "sortquest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537688308442:android:07ebe7470dc828b11483e3",
+        "android_client_info": {
+          "package_name": "com.SortQuest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoR_uAhCTCMW8EyP4o5Ub2aq8EN6tJHz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

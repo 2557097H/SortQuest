@@ -311,7 +311,30 @@
 
 ## 17th Feb
 
-*1 hour* Added end scene for story mode
+* *1 hour* Added end scene for story mode
+
+## 18th Feb
+
+* *1 hour* Bug fixing story mode
+* *2 hour* Added background music and animation audio
+* *1 hour* Added menu to all scenes
+* *3 hour* Set up username and password authentication
+
+## 19th Feb
+
+* *4 hour* Set up firebase realtime database for my project and linked to authentication, and prepared for leaderboards and badges.
+* *3 hour * Added leaderboards for each practice challenge
+
+## 20th Feb
+
+* *2 hour* Completed leaderboards
+* *3 hour* Added badges 
+* *2 hour* Evaluation plan
+
+## 21st Feb
+
+* *0.5 hour* Meeting with supervisor
+* *0.5 hour* Looked into unit testing for unity
 
 -Deploying app
 -Customisation of avatars
