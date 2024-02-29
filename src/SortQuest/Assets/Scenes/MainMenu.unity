@@ -33052,7 +33052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -3}
+  m_AnchoredPosition: {x: 2, y: -25}
   m_SizeDelta: {x: 746.7043, y: 402.0773}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292938087
@@ -33077,12 +33077,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "In the mystical world of sorting algorithms, where the very fabric of
     order and chaos intertwine, you, a knight, embark on an epic quest to reclaim
-    your world from disarray. \n\nThe once-harmonious kingdom now teeters on the
-    edge of chaos, its lands divided into realms ruled by enigmatic forces. To restore
-    equilibrium, you must journey through BubbleSort Land,  QuickSort Land, and MergeSort
-    Land.\n\n Only by mastering these sorting algorithms can you hope to mend the
-    fabric of his world, conquer the algorithmic realms, and free your kingdom from
-    the chains of disorder."
+    your world from disarray. \n\nThe once-harmonious kingdom has had it's sword
+    stolen which keeps peace to the kingdom. It is now on the edge of chaos, its
+    lands divided into realms ruled by enigmatic forces. To restore equilibrium,
+    you must journey through BubbleSort Land,  QuickSort Land, and MergeSort Land,
+    completing challenges along the way and reclaim the sword from the castle"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc9a4915ff4459a4d91b3466b3fabd26, type: 2}
   m_sharedMaterial: {fileID: -3284442309478387561, guid: dc9a4915ff4459a4d91b3466b3fabd26, type: 2}
