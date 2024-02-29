@@ -132,23 +132,39 @@ public class MergeSortLevelTwo : MonoBehaviour
             resultText.text = "Correct - Well Done";
             finishSound.Play();
             continueButton.gameObject.SetActive(true);
+            int j = 0;
+            foreach (Transform list in contentObject.transform)
+            {
+                if (!list.name.Contains("List")) { continue; }
+                Transform grid = list.transform.GetChild(0);
+
+                foreach (Transform slot in grid)
+                {
+                    GameObject slotObject = slot.gameObject;
+
+
+                    slotObject.GetComponent<Image>().color = Color.green;
+                    j++;
+
+                }
+            }
         }
         else
         {
             resultText.text = "Wrong";
             int i = 0;
-                foreach (Transform list in contentObject.transform)
-                {
+            foreach (Transform list in contentObject.transform)
+            {
                 if (!list.name.Contains("List")) { continue; }
-                    Transform grid = list.transform.GetChild(0);
+                Transform grid = list.transform.GetChild(0);
 
                 foreach (Transform slot in grid)
                 {
                     GameObject slotObject = slot.gameObject;
-                    
+
                     if (mergeHistory[i] != mergeHistoryChecker[i])
                     {
-                        
+
                         slotObject.GetComponent<Image>().color = Color.red;
                         i++;
                     }
@@ -157,15 +173,15 @@ public class MergeSortLevelTwo : MonoBehaviour
                         slotObject.GetComponent<Image>().color = Color.green;
                         i++;
                     }
-                            
-                            
 
-                        }
 
 
                 }
 
-            
+
+            }
+
+
         }
     }
 }

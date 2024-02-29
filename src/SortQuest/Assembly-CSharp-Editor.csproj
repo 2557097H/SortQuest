@@ -1154,6 +1154,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PsdPlugin">
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
       <Private>False</Private>
@@ -1258,6 +1262,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1266,8 +1274,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    <Reference Include="Unity.Play.Publisher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Play.Publisher.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
@@ -1276,6 +1284,10 @@
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">

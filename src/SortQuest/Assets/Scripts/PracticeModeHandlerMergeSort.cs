@@ -1,8 +1,10 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class PracticeModeHandlerMergeSort : MonoBehaviour
 {
+    public SceneSelector sceneSelector; 
+
     public void OnContinueButtonClick()
     {
         bool isPracticeMode = PlayerPrefs.GetInt("PracticeMode", 0) == 1;
@@ -13,15 +15,21 @@ public class PracticeModeHandlerMergeSort : MonoBehaviour
         }
         else
         {
-            if(SceneManager.GetActiveScene().name == "MergeSortLevelTwo")
+            if (SceneManager.GetActiveScene().name == "MergeSortLevelTwo")
             {
-                SceneManager.LoadScene("FinalStoryScene");
+                if (sceneSelector != null)
+                {
+                    sceneSelector.SwitchSceneStory("FinalStoryScene");
+                }
+                else
+                {
+                    Debug.LogError("sceneSelector is not assigned.");
+                }
             }
             else
             {
                 SceneManager.LoadScene("MergeSortStory");
             }
-            
         }
     }
 }

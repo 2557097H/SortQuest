@@ -24,12 +24,13 @@ public class Timer : MonoBehaviour
 
     private string playerName;
     DatabaseReference dbRef;
+    private bool isPracticeMode;
 
     async void Start()
     {
         await UnityServices.InitializeAsync();
         dbRef = FirebaseDatabase.DefaultInstance.RootReference;
-        bool isPracticeMode = PlayerPrefs.GetInt("PracticeMode", 0) == 1;
+        isPracticeMode = PlayerPrefs.GetInt("PracticeMode", 0) == 1;
         if (isPracticeMode)
         {
             timerText.gameObject.SetActive(true);
@@ -69,50 +70,53 @@ public class Timer : MonoBehaviour
 
     public async void publishTime()
     {
-        elapsedTime = (float)Math.Round(elapsedTime, 2);
-
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        playerName = await AuthenticationService.Instance.GetPlayerNameAsync();
-        string pattern = @"^(.*?)(?:#(\d+))?$";
-
-        Match match = Regex.Match(playerName, pattern);
-
-        if (match.Success)
+        if (isPracticeMode)
         {
-            playerName = match.Groups[1].Value;
-        }
+            elapsedTime = (float)Math.Round(elapsedTime, 2);
 
-        if (!string.IsNullOrEmpty(playerName))
-        {
-            DatabaseReference userReference = FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(playerName);
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            playerName = await AuthenticationService.Instance.GetPlayerNameAsync();
+            string pattern = @"^(.*?)(?:#(\d+))?$";
 
-            if (currentSceneName == "BubbleSortLevelOne")
+            Match match = Regex.Match(playerName, pattern);
+
+            if (match.Success)
             {
-                await SetScore(userReference, "bubbleSortLevelOne", elapsedTime);
+                playerName = match.Groups[1].Value;
             }
-            else if (currentSceneName == "BubbleSortLevelTwo")
+
+            if (!string.IsNullOrEmpty(playerName))
             {
-                await SetScore(userReference, "bubbleSortLevelTwo", elapsedTime);
-            }
-            else if (currentSceneName == "QuickSortLevelOne")
-            {
-                await SetScore(userReference, "quickSortLevelOne", elapsedTime);
-            }
-            else if (currentSceneName == "QuickSortLevelTwo")
-            {
-                await SetScore(userReference, "quickSortLevelTwo", elapsedTime);
-            }
-            else if (currentSceneName == "MergeSortLevelOne")
-            {
-                await SetScore(userReference, "mergeSortLevelOne", elapsedTime);
-            }
-            else if (currentSceneName == "MergeSortLevelTwo")
-            {
-                await SetScore(userReference, "mergeSortLevelTwo", elapsedTime);
-            }
-            else
-            {
-                Debug.LogError("Player name is not available.");
+                DatabaseReference userReference = FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(playerName);
+
+                if (currentSceneName == "BubbleSortLevelOne")
+                {
+                    await SetScore(userReference, "bubbleSortLevelOne", elapsedTime);
+                }
+                else if (currentSceneName == "BubbleSortLevelTwo")
+                {
+                    await SetScore(userReference, "bubbleSortLevelTwo", elapsedTime);
+                }
+                else if (currentSceneName == "QuickSortLevelOne")
+                {
+                    await SetScore(userReference, "quickSortLevelOne", elapsedTime);
+                }
+                else if (currentSceneName == "QuickSortLevelTwo")
+                {
+                    await SetScore(userReference, "quickSortLevelTwo", elapsedTime);
+                }
+                else if (currentSceneName == "MergeSortLevelOne")
+                {
+                    await SetScore(userReference, "mergeSortLevelOne", elapsedTime);
+                }
+                else if (currentSceneName == "MergeSortLevelTwo")
+                {
+                    await SetScore(userReference, "mergeSortLevelTwo", elapsedTime);
+                }
+                else
+                {
+                    Debug.LogError("Player name is not available.");
+                }
             }
         }
     }

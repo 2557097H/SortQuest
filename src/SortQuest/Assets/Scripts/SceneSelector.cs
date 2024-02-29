@@ -27,14 +27,14 @@ public class SceneSelector : MonoBehaviour
    
             await SetBadgeValue("quickBadge", 1);
         }
-        else if (sceneName == "MergeSortStory" && SceneManager.GetActiveScene().name == "MergeSortStory")
+        else if (sceneName == "FinalStoryScene" && SceneManager.GetActiveScene().name == "MergeSortLevelTwo")
         {
             PlayerPrefs.SetInt("WoodActive", 0);
 
             
             await SetBadgeValue("mergeBadge", 1);
         }
-        else if(sceneName == "MainMenu" && SceneManager.GetActiveScene().name == "MergeSortStory")
+        else if(sceneName == "MainMenu" && SceneManager.GetActiveScene().name == "FinalStoryScene")
         {
             await SetBadgeValue("storyBadge", 1);
         }
@@ -58,6 +58,7 @@ public class SceneSelector : MonoBehaviour
 
             try
             {
+;
                 // Set the badge value in the user's data
                 await userReference.Child("badges").Child(badgeName).SetValueAsync(value);
                 Debug.Log($"{badgeName} badge value updated successfully.");

@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PracticeModeHandlerQuickSort - Copy.cs" />
-    <Compile Include="Assets\Tests\PlayerMovementTests.cs" />
     <Compile Include="Assets\Free 2D Cartoon Parallax Background\Demo\Script\BackgroundControl_0.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\GUIColorAttribute.cs" />
     <Compile Include="Assets\Scripts\MergeSortLevelOneCheckerPartOne.cs" />
@@ -135,6 +134,7 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxIfAttribute.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BlockquoteAttribute.cs" />
+    <Compile Include="Assets\Scripts\LoadStory.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
@@ -1158,6 +1158,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PsdPlugin">
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
       <Private>False</Private>
@@ -1262,6 +1266,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1270,8 +1278,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    <Reference Include="Unity.Play.Publisher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Play.Publisher.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
@@ -1280,6 +1288,10 @@
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">

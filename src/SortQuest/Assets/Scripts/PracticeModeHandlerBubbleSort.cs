@@ -7,6 +7,8 @@ public class PracticeModeHandlerBubbleSort: MonoBehaviour
     {
         bool isPracticeMode = PlayerPrefs.GetInt("PracticeMode", 0) == 1;
 
+        Debug.Log(isPracticeMode + " CLickidy click mate");
+
         if (isPracticeMode)
         {
             SceneManager.LoadScene("MainMenu");

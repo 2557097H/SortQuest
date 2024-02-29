@@ -39,9 +39,12 @@ public class Leaderboard : MonoBehaviour
         if (snapshot != null && snapshot.Exists)
         {
             // Clear previous entries
-            foreach (Transform child in entryContainer)
+            if (entryContainer.childCount > 0)
             {
-                Destroy(child.gameObject);
+                foreach (Transform child in entryContainer)
+                {
+                    Destroy(child.gameObject);
+                }
             }
 
             // Iterate through the leaderboard entries

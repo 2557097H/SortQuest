@@ -1064,6 +1064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike
       objectReference: {fileID: 0}
+    - target: {fileID: 7588479704653555823, guid: 6c83ae81db6482f438870cb264b0e8ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1527,9 +1531,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1349613187}
     m_Modifications:
+    - target: {fileID: 796464613234584105, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1570,6 +1594,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 549240005872119288, guid: f6c9606412dfcda4c81254547f8f523a, type: 3}
       propertyPath: waitTimeBeforeStart
@@ -2440,6 +2468,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 119, y: 22, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 120, y: 22, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -2466,8 +2514,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 6a829d7f50d532849bfe8bb931db7a9b, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 0dd546d245e49524498e502f1e51bfc9, type: 2}
   - m_RefCount: 2
@@ -2505,8 +2553,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: -3581127029532586042, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -8620202154233844528, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 2
@@ -2520,7 +2568,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 1918823624152674874, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 33
+  - m_RefCount: 35
     m_Data:
       e00: 1
       e01: 0
@@ -2539,13 +2587,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 33
+  - m_RefCount: 35
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -58, y: -26, z: 0}
-  m_Size: {x: 107, y: 45, z: 1}
+  m_Size: {x: 179, y: 49, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2781,9 +2829,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5560598508487179234, guid: 01b27b7601f13c64aa009fa4ed7ea26e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.98
+      objectReference: {fileID: 0}
     - target: {fileID: 7677542584949315773, guid: 01b27b7601f13c64aa009fa4ed7ea26e, type: 3}
       propertyPath: m_Name
       value: MovingPlatformOne Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418704347156799935, guid: 01b27b7601f13c64aa009fa4ed7ea26e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3995,9 +4051,7 @@ Transform:
   - {fileID: 1690837288}
   - {fileID: 1970666469}
   - {fileID: 1404404460}
-  - {fileID: 750178842}
   - {fileID: 727783286}
-  - {fileID: 1595718738}
   - {fileID: 1273885391}
   - {fileID: 319362735}
   - {fileID: 623845016}
@@ -5959,9 +6013,29 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 796464613234584105, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalScale.x
@@ -6011,6 +6085,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -6039,7 +6117,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 163.20146
+      value: 166.28
       objectReference: {fileID: 0}
     - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6076,6 +6154,10 @@ PrefabInstance:
     - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856670284407543698, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4856670284407543698, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6307,11 +6389,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc9968c4dc5d5264b89413cdfe5d303e, type: 3}
---- !u!4 &750178842 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-  m_PrefabInstance: {fileID: 891732798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &752423091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2072665522442868324, guid: b7ef425fe4175044ab5485c59f00305e, type: 3}
@@ -7326,75 +7403,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &891732798
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 383058305}
-    m_Modifications:
-    - target: {fileID: 135067362590717710, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 135067362590717710, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2076066102807989625, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_Name
-      value: MovingSaw (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5338579211885311585, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.362
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 82.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.9671795
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720536675357684874, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b4a2126f98cd84f4f88da78b45f67b25, type: 3}
 --- !u!1001 &901677906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8058,9 +8066,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1349613187}
     m_Modifications:
+    - target: {fileID: 796464613234584105, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8101,6 +8129,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 549240005872119288, guid: f6c9606412dfcda4c81254547f8f523a, type: 3}
       propertyPath: waitTimeBeforeStart
@@ -9253,9 +9285,29 @@ PrefabInstance:
       propertyPath: waitTimeBeforeStart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 796464613234584105, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalScale.x
@@ -9304,6 +9356,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9740,6 +9796,10 @@ PrefabInstance:
     - target: {fileID: 7588479704653555823, guid: 6c83ae81db6482f438870cb264b0e8ac, type: 3}
       propertyPath: m_Name
       value: Spike (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588479704653555823, guid: 6c83ae81db6482f438870cb264b0e8ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10998,9 +11058,29 @@ PrefabInstance:
       propertyPath: waitTimeBeforeStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 796464613234584105, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalScale.x
@@ -11049,6 +11129,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11756,6 +11840,10 @@ PrefabInstance:
     - target: {fileID: 7588479704653555823, guid: 6c83ae81db6482f438870cb264b0e8ac, type: 3}
       propertyPath: m_Name
       value: Spike (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588479704653555823, guid: 6c83ae81db6482f438870cb264b0e8ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33906,72 +33994,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2072665522442868324, guid: b7ef425fe4175044ab5485c59f00305e, type: 3}
   m_PrefabInstance: {fileID: 1370948566}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1595718737
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 383058305}
-    m_Modifications:
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 167.47147
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 17.912462
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.579228
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856670284407543698, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.719
-      objectReference: {fileID: 0}
-    - target: {fileID: 6806676223966637541, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-      propertyPath: m_Name
-      value: MovingSawVertical Variant (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
---- !u!4 &1595718738 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4304334102192755734, guid: 1aa90498ae53295448c73ac020bf6887, type: 3}
-  m_PrefabInstance: {fileID: 1595718737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1595865482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3668942985026257170, guid: 6c83ae81db6482f438870cb264b0e8ac, type: 3}
@@ -34735,9 +34757,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1349613187}
     m_Modifications:
+    - target: {fileID: 796464613234584105, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34778,6 +34820,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35265,9 +35311,29 @@ PrefabInstance:
       propertyPath: waitTimeBeforeStart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 796464613234584105, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalScale.x
@@ -35316,6 +35382,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180.411
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35513,9 +35583,29 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 796464613234584105, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalScale.x
@@ -35564,6 +35654,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180.411
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35656,9 +35750,29 @@ PrefabInstance:
       propertyPath: waitTimeBeforeStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 796464613234584105, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalScale.x
@@ -35707,6 +35821,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180.411
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: f89339d9c67ee984cb4e9c04ebf3cb28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35903,9 +36021,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1349613187}
     m_Modifications:
+    - target: {fileID: 796464613234584105, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614501576273, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614684625379, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614721710445, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Elevator (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464614996848182, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35946,6 +36084,10 @@ PrefabInstance:
     - target: {fileID: 796464614996848183, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796464615045801945, guid: 4c6f7f680d35ecb45bd66603fd0f3516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

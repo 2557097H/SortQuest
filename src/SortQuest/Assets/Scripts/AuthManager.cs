@@ -103,7 +103,7 @@ public class AuthManager : MonoBehaviour
             // Sign up the user
             await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(username, password);
             Debug.Log("SignUp is successful.");
-            errorTextSignUp.text = "SignUp is successful";
+            errorTextSignUp.text = "SignUp is successful - Please Wait";
 
             // Initialize the user object
             user.userName = username;
