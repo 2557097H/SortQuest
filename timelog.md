@@ -323,7 +323,7 @@
 ## 19th Feb
 
 * *4 hour* Set up firebase realtime database for my project and linked to authentication, and prepared for leaderboards and badges.
-* *3 hour * Added leaderboards for each practice challenge
+* *3 hour* Added leaderboards for each practice challenge
 
 ## 20th Feb
 
@@ -335,6 +335,8 @@
 
 * *0.5 hour* Meeting with supervisor
 * *0.5 hour* Looked into unit testing for unity
+
+
 
 -Deploying app
 -Customisation of avatars
