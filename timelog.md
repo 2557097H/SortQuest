@@ -336,7 +336,47 @@
 * *0.5 hour* Meeting with supervisor
 * *0.5 hour* Looked into unit testing for unity
 
+## 24th Feb
 
+* *2 hour* Started creating evaluation on google docs
+
+## 25th Feb
+
+* *3 hour* Finished creating evaluation on google docs
+
+## 26th Feb
+
+* *5 hour* Tried implementing unit tests. Created framework however assembly references keep breaking the app
+* *3 hour* Tried implementing a continue story button
+
+
+## 28th Feb
+
+* *0.5 hour* Meeting with supervisor
+* *6 hours* Walkthrough game from an evaluator point of view and debugged 
+
+## 29th Feb
+
+* *3 hour* Finished debugging so its ready for evaluation
+
+## 4th March
+
+* *1 hour* Recruiting participants
+* *6 hour* Dissertation writing
+
+## 9th March
+
+* *1 hour * Recruiting participants
+* *8 hour* Dissertation writing
+
+## 6th March
+
+* *0.5 hour* Meeting with supervisor
+* *1 hour* Recruiting participants
+
+## 8th March
+
+* *2 hour* Dissertation writing
 
 -Deploying app
 -Customisation of avatars
