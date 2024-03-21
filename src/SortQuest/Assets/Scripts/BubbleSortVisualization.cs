@@ -5,15 +5,29 @@ using UnityEngine.UI;
 
 public class BubbleSortVisualization : MonoBehaviour
 {
+    // Array of number objects to be sorted
     public GameObject[] numberObjects;
+
+    // Delay between object swaps
     public float swapDelay = 1.0f;
+
+    // Button to reset the visualization
     public Button resetButton;
+
+    // Arrays to store original positions and transforms
     private GameObject[] originalPositions = new GameObject[7];
     private Vector3[] originalPositionTransforms = new Vector3[7];
 
-    public TextMeshProUGUI stateText; // Text element to display the state
-    private bool isPlaying = false; // Flag to control play/pause
-    private bool isPaused = false; // Flag to indicate if the coroutine is paused
+    // Text element to display the state
+    public TextMeshProUGUI stateText;
+
+    // Flag to control play/pause
+    private bool isPlaying = false;
+
+    // Flag to indicate if the coroutine is paused
+    private bool isPaused = false;
+
+    // Counter to track the state
     private int count = 0;
 
     void Start()
@@ -22,6 +36,7 @@ public class BubbleSortVisualization : MonoBehaviour
         SaveOriginalPositions();
     }
 
+    // Function to toggle play/pause state
     public void TogglePlayPause()
     {
         isPlaying = !isPlaying;
@@ -43,13 +58,13 @@ public class BubbleSortVisualization : MonoBehaviour
         UpdateStateText();
     }
 
+    // Function to update the state text
     void UpdateStateText()
     {
-        
         stateText.text = isPlaying ? "Playing" : (count == 2 ? "Finished" : "Paused");
-
     }
 
+    // Coroutine for bubble sort animation
     IEnumerator BubbleSortAnimation()
     {
         int n = numberObjects.Length;
@@ -80,6 +95,7 @@ public class BubbleSortVisualization : MonoBehaviour
         UpdateStateText();
     }
 
+    // Coroutine to swap objects
     IEnumerator SwapObjects(GameObject obj1, GameObject obj2)
     {
         Vector3 pos1 = obj1.transform.localPosition;
@@ -95,6 +111,7 @@ public class BubbleSortVisualization : MonoBehaviour
         SwapArrayElements(numberObjects, index1, index2);
     }
 
+    // Coroutine to move an object
     IEnumerator MoveObject(GameObject obj, Vector3 targetPosition, float duration)
     {
         float elapsedTime = 0;
@@ -124,6 +141,7 @@ public class BubbleSortVisualization : MonoBehaviour
         }
     }
 
+    // Function to get the number from the object
     int GetNumber(GameObject obj)
     {
         TextMeshProUGUI tmpText = obj.GetComponentInChildren<TextMeshProUGUI>();
@@ -136,24 +154,27 @@ public class BubbleSortVisualization : MonoBehaviour
         return 0;
     }
 
+    // Function to swap array elements
     void SwapArrayElements<T>(T[] array, int index1, int index2)
     {
         T temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
     }
+
+    // Function to save original positions
     void SaveOriginalPositions()
     {
         int objectCount = numberObjects.Length;
-       
+
         for (int i = 0; i < objectCount; i++)
         {
             originalPositions[i] = numberObjects[i];
             originalPositionTransforms[i] = numberObjects[i].transform.position;
-
         }
     }
 
+    // Function to reset object positions
     void ResetObjectPositions()
     {
         int objectCount = numberObjects.Length;
@@ -162,19 +183,17 @@ public class BubbleSortVisualization : MonoBehaviour
         {
             numberObjects[i] = originalPositions[i];
             numberObjects[i].transform.position = originalPositionTransforms[i];
-
         }
     }
 
+    // Function to reset the visualization
     public void Reset()
     {
-        StopAllCoroutines(); // Stop any running coroutines
-        ResetObjectPositions(); // Reset object positions
-        count = 0; // Reset the count
+        StopAllCoroutines(); 
+        ResetObjectPositions();
+        count = 0; 
         isPlaying = false; // Reset the play/pause state
         isPaused = false; // Reset the pause state
-        UpdateStateText(); // Update the state text
-       
+        UpdateStateText(); 
     }
-
 }

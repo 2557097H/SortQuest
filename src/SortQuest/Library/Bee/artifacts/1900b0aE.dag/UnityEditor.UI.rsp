@@ -122,6 +122,8 @@
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -define:UNITY_EDITOR_ONLY_COMPILATION
+-r:"Assets/AltTester/Runtime/3rdParty/nlog.4.7.9/netstandard2.0/NLog.dll"
+-r:"Assets/AltTester/Runtime/3rdParty/websocket-sharp/netstandard2.0/altwebsocket-sharp.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll"

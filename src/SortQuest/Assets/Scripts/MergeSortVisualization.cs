@@ -6,25 +6,28 @@ using System.Threading;
 
 public class MergeSortVisualization : MonoBehaviour
 {
+    // GameObject that contains the content to be sorted
     public GameObject content;
+
+    // Delay between activations of game objects
     public float activationDelay = 0.5f;
 
-    public TextMeshProUGUI stateText; // Text element to display the state
-    private bool isPlaying = false; // Flag to control play/pause
-    private bool isPaused = false; // Flag to indicate if the coroutine is paused
+    // Text element to display the state
+    public TextMeshProUGUI stateText;
+
+    // Flag to control play/pause
+    private bool isPlaying = false;
+
+    // Flag to indicate if the coroutine is paused
+    private bool isPaused = false;
+
+    // Counter to track coroutine state
     private int count = 0;
 
+    // Coroutine reference for Merge Sort visualization
     private Coroutine mergeSortCoroutine;
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-        // No need for keyboard input checking here, as buttons will handle it
-    }
-
+    // Toggle play/pause state
     public void TogglePlayPause()
     {
         isPlaying = !isPlaying;
@@ -46,11 +49,13 @@ public class MergeSortVisualization : MonoBehaviour
         UpdateStateText();
     }
 
+    // Update state text based on current state
     void UpdateStateText()
     {
         stateText.text = isPlaying ? "Playing" : (count == 2 ? "Finished" : "Paused");
     }
 
+    // Coroutine for Merge Sort visualization
     IEnumerator MergeSortVisualizationCoroutine(Transform parent)
     {
         if (parent.childCount > 0)
@@ -118,11 +123,12 @@ public class MergeSortVisualization : MonoBehaviour
             Debug.LogWarning("Content is empty.");
         }
 
-        count = 2;
-        isPlaying = false;
-        UpdateStateText();
+        count = 2; // Set count to 2 to indicate that the coroutine has finished
+        isPlaying = false; // Set playing flag to false
+        UpdateStateText(); // Update state text
     }
 
+    // Reset the visualization
     public void Reset()
     {
         StopAllCoroutines(); // Stop any running coroutines, including MergeSortVisualizationCoroutine
@@ -133,6 +139,7 @@ public class MergeSortVisualization : MonoBehaviour
         UpdateStateText(); // Update the state text
     }
 
+    // Recursively reset shield states
     void ResetShieldStates(Transform parent)
     {
         var firstListCount = 0;
@@ -140,10 +147,8 @@ public class MergeSortVisualization : MonoBehaviour
         {
             if (firstListCount == 0)
             {
-
                 firstListCount++;
                 continue;
-
             }
             if (child.name.Contains("List"))
             {
@@ -171,4 +176,4 @@ public class MergeSortVisualization : MonoBehaviour
             }
         }
     }
-} 
+}

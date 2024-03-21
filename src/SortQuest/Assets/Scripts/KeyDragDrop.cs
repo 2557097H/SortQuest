@@ -35,12 +35,14 @@ public class KeyDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvasGroup.blocksRaycasts = false;
 
     }
+
+    // Function to check if all sibling slots are occupied
     private bool AllSiblingsOccupied()
     {
         Transform parent = transform.parent.parent.parent;
         foreach (Transform sibling in parent)
         {
-            foreach(Transform child in sibling)
+            foreach (Transform child in sibling)
             {
                 if (child.childCount == 0)
                 {
@@ -51,7 +53,6 @@ public class KeyDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
         return true; // All sibling slots are occupied
     }
-
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -66,10 +67,10 @@ public class KeyDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         // Enable raycasts again
         canvasGroup.blocksRaycasts = true;
 
+        // Destroy the duplicated key if more than one key is in the same slot
         if (transform.parent.childCount > 1)
         {
             Destroy(duplicatedKey);
-
         }
     }
 

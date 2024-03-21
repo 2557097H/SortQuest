@@ -12,7 +12,7 @@ public class Death : MonoBehaviour
     public float fallingDurationThreshold = 5f;
     private bool hasDied;
     [SerializeField] private AudioSource deathSound;
-    // Start is called before the first frame update
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -21,6 +21,7 @@ public class Death : MonoBehaviour
 
     private void Update()
     {
+        // Check the current animation state of the character
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         if (stateInfo.IsName("HeroKnight_Fall"))
         {
@@ -46,39 +47,43 @@ public class Death : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
+        // Check for collision with trap objects
         if (collision2D.gameObject.CompareTag("Trap"))
         {
             Die();
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Check for trigger collision with trap objects, ensuring the player has not already died
         if (other.CompareTag("Trap") && !hasDied)
         {
-            hasDied = true;  
+            hasDied = true;
             Die();
         }
     }
 
     private void Die()
     {
+        // Disable physics simulation, trigger death animation, play death sound, and restart level
         rb.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
         deathSound.Play();
-        StartCoroutine(RestartAfterDelay()); 
+        StartCoroutine(RestartAfterDelay());
     }
 
     private IEnumerator RestartAfterDelay()
     {
-        yield return new WaitForSeconds(1.5f); 
+        // Wait for a delay before restarting the level
+        yield return new WaitForSeconds(1.5f);
         RestartLevel();
     }
 
     private void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
-
+        // Reload the current scene to restart the level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

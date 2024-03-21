@@ -6,23 +6,27 @@ using TMPro;
 
 public class Leaderboard : MonoBehaviour
 {
-    public GameObject entryPrefab;
-    public Transform entryContainer;
-    public string level;
+    public GameObject entryPrefab; // Prefab for leaderboard entry UI
+    public Transform entryContainer; // Container for leaderboard entries
+    public string level; // Level for which leaderboard is being displayed
 
+    // Method called when leaderboard button is clicked
     public void LeaderboardClick()
     {
         // Call a method to load and display the leaderboard data for the specified level
         LoadAndDisplayLeaderboard(level);
     }
 
+    // Method to load and display leaderboard data
     void LoadAndDisplayLeaderboard(string level)
     {
+        // Get reference to the leaderboard node in the Firebase Realtime Database
         DatabaseReference leaderboardReference = FirebaseDatabase.DefaultInstance.RootReference.Child("Leaderboard").Child(level);
 
-        // Attach a listener to the leaderboard reference
-        leaderboardReference.OrderByValue().LimitToFirst(10).ValueChanged += (sender, e) =>
+        // Attach a listener to the leaderboard reference to fetch data
+        leaderboardReference.OrderByValue().LimitToFirst(20).ValueChanged += (sender, e) =>
         {
+            // Check for errors
             if (e.DatabaseError != null)
             {
                 Debug.LogError($"Error loading leaderboard: {e.DatabaseError.Message}");
@@ -34,8 +38,10 @@ public class Leaderboard : MonoBehaviour
         };
     }
 
+    // Method to parse and display leaderboard data
     void ParseAndDisplayLeaderboardData(DataSnapshot snapshot)
     {
+        // Check if data exists
         if (snapshot != null && snapshot.Exists)
         {
             // Clear previous entries
@@ -53,8 +59,8 @@ public class Leaderboard : MonoBehaviour
 
             foreach (var childSnapshot in snapshot.Children)
             {
-                string playerName = childSnapshot.Key;
-                float score = Convert.ToSingle(childSnapshot.Value);
+                string playerName = childSnapshot.Key; // Get player name
+                float score = Convert.ToSingle(childSnapshot.Value); // Get player score
 
                 // Add entry to the list
                 entries.Add(new LeaderboardEntry(playerName, score));
@@ -66,11 +72,11 @@ public class Leaderboard : MonoBehaviour
             // Display the sorted leaderboard using prefabs and GridLayoutGroup
             foreach (var entry in entries)
             {
-                GameObject entryObject = Instantiate(entryPrefab, entryContainer);
-                LeaderboardEntryUI entryUI = entryObject.GetComponent<LeaderboardEntryUI>();
-                entryUI.SetEntry(position, entry.PlayerName, entry.Score);
+                GameObject entryObject = Instantiate(entryPrefab, entryContainer); // Instantiate entry prefab
+                LeaderboardEntryUI entryUI = entryObject.GetComponent<LeaderboardEntryUI>(); // Get UI component
+                entryUI.SetEntry(position, entry.PlayerName, entry.Score); // Set entry UI data
 
-                position++;
+                position++; // Increment position for next entry
             }
         }
         else
@@ -83,8 +89,8 @@ public class Leaderboard : MonoBehaviour
 // Helper class to store leaderboard entries
 public class LeaderboardEntry
 {
-    public string PlayerName { get; }
-    public float Score { get; }
+    public string PlayerName { get; } 
+    public float Score { get; } 
 
     public LeaderboardEntry(string playerName, float score)
     {

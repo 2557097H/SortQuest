@@ -11,7 +11,7 @@ using Firebase.Database;
 using System;
 using System.Text.RegularExpressions;
 
-
+// Serializable class to represent user data
 [Serializable]
 public class User
 {
@@ -22,9 +22,10 @@ public class User
     public float quickSortLevelTwo;
     public float mergeSortLevelOne;
     public float mergeSortLevelTwo;
-    public Badges badges;  // Add a property for badges
+    public Badges badges;
 }
 
+// Serializable class to represent badges
 [Serializable]
 public class Badges
 {
@@ -36,35 +37,48 @@ public class Badges
     public float learnBadge;
 }
 
-
 public class AuthManager : MonoBehaviour
 {
+    // Input fields for sign-up and sign-in
     public TMP_InputField usernameSignInInput;
     public TMP_InputField passwordSignInInput;
     public TMP_InputField usernameSignUpInput;
     public TMP_InputField passwordSignUpInput;
+
+    // Error text for sign-up and sign-in
     public TMP_Text errorTextSignIn;
     public TMP_Text errorTextSignUp;
+
+    // Reference to Firebase database
     DatabaseReference dbRef;
+
+    // User object to hold user data
     public User user;
+
+    // User ID and player name
     public string userId;
     private string playerName;
-    // Start is called before the first frame update
+
     async void Start()
     {
-    
+        // Initialize Unity services
         await UnityServices.InitializeAsync();
+
+        // Get reference to the Firebase database
         dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+
         // Set up censoring for password input fields
         StartCensoring(passwordSignUpInput);
         StartCensoring(passwordSignInInput);
     }
 
+    // Function to set up censoring for password input fields
     private void StartCensoring(TMP_InputField inputField)
     {
         inputField.contentType = TMP_InputField.ContentType.Password;
     }
 
+    // Function to handle sign-up button click
     public async void OnSignUpButtonClick()
     {
         string username = usernameSignUpInput.text;
@@ -80,6 +94,7 @@ public class AuthManager : MonoBehaviour
         }
     }
 
+    // Function to handle sign-in button click
     public async void OnSignInButtonClick()
     {
         string username = usernameSignInInput.text;
@@ -95,7 +110,7 @@ public class AuthManager : MonoBehaviour
         }
     }
 
-
+    // Function to sign up with username and password
     async Task SignUpWithUsernamePassword(string username, string password)
     {
         try
@@ -132,32 +147,35 @@ public class AuthManager : MonoBehaviour
             await AuthenticationService.Instance.UpdatePlayerNameAsync(username);
             await dbRef.Child("users").Child(username).SetRawJsonValueAsync(json);
 
+            SceneManager.LoadScene("MainMenu");
+        }
+        catch (AuthenticationException ex)
+        {
+            errorTextSignUp.text = "Username has been taken or username or password does not meet requirements";
+            Debug.Log(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            errorTextSignUp.text = "Username has been taken or username or password does not meet requirements";
+            Debug.Log(ex);
+        }
+    }
+
+    // Function to sign in with username and password
+    async Task SignInWithUsernamePasswordAsync(string username, string password)
+    {
+        try
+        {
+            // Sign in the user
+            await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(username, password);
+            Debug.Log("SignIn is successful.");
+            errorTextSignIn.text = "SignIn is successful";
+
             // Load the main menu scene
             SceneManager.LoadScene("MainMenu");
         }
         catch (AuthenticationException ex)
         {
-            errorTextSignUp.text = "Username has been taken or username or password does not meet requirements";
-            Debug.Log(ex);
-        }
-        catch (RequestFailedException ex)
-        {
-            errorTextSignUp.text = "Username has been taken or username or password does not meet requirements";
-            Debug.Log(ex);
-        }
-    }
-
-    async Task SignInWithUsernamePasswordAsync(string username, string password)
-    {
-        try
-        {
-            await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(username, password);
-            Debug.Log("SignIn is successful.");
-            errorTextSignIn.text = "SignIn is successful";
-            SceneManager.LoadScene("MainMenu");
-        }
-        catch (AuthenticationException ex)
-        {
             errorTextSignIn.text = "Username or password incorrect";
             Debug.Log(ex);
         }
@@ -168,6 +186,7 @@ public class AuthManager : MonoBehaviour
         }
     }
 
+    // Function to continue as a guest
     public void ContinueAsGuest()
     {
         SceneManager.LoadScene("MainMenu");

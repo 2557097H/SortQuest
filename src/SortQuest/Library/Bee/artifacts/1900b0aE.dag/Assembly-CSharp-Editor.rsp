@@ -119,6 +119,8 @@
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -define:UNITY_EDITOR_ONLY_COMPILATION
+-r:"Assets/AltTester/Runtime/3rdParty/nlog.4.7.9/netstandard2.0/NLog.dll"
+-r:"Assets/AltTester/Runtime/3rdParty/websocket-sharp/netstandard2.0/altwebsocket-sharp.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll"
 -r:"Assets/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll"
@@ -354,6 +356,9 @@
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.1/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/AltTester.AltTesterUnitySDK.Driver.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/AltTester.AltTesterUnitySDK.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/AltTester.AltTesterUnitySDK.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PsdPlugin.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Animation.Editor.ref.dll"

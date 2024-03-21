@@ -6,35 +6,40 @@ using UnityEngine.UI;
 
 public class MergeSortLevelOneCheckerPartOne : MonoBehaviour
 {
-    public TMP_Text checkText;
-    public TMP_Text continueText;
-    public Button continueButton;
-    [SerializeField] AudioSource finishSound;
+    // TextMeshPro components for displaying messages
+    public TMP_Text checkText; // Text for displaying checking message
+    public TMP_Text continueText; // Text for displaying continue message
+    public Button continueButton; // Button for continuing to the next step
+    [SerializeField] AudioSource finishSound; // Sound played when the correct order is achieved
 
     // Check the order of code blocks
     public void CheckCodeBlockOrder()
     {
-        // Assuming you have a list of TextMeshPro components in the correct order
+        // List to hold TextMeshPro components representing code blocks
         List<TMP_Text> codeBlocks = new List<TMP_Text>();
+
+        // Iterate through child objects to find code blocks
         foreach (Transform child in transform)
         {
             TMP_Text codeBlockText = child.GetComponentInChildren<TMP_Text>();
-            codeBlocks.Add(codeBlockText);
+            codeBlocks.Add(codeBlockText); // Add code block text to the list
         }
 
-
-        // Check the order
+        // Check the order of code blocks
         for (int i = 0; i < codeBlocks.Count; i++)
         {
-            if (codeBlocks[i].text.ToLower().Replace(" ", "").Trim() != GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim())
+            // Compare the actual text of the code block with the expected text
+            if (codeBlocks[i].text.ToLower().Replace(" ", "").Trim() !=
+                GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim())
             {
                 Debug.Log(codeBlocks[i].text.ToLower().Replace(" ", "").Trim());
                 Debug.Log(GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim());
-                checkText.text = "Not correct order - try again";
+                checkText.text = "Not correct order - try again"; // Display message for incorrect order
                 return;
             }
         }
 
+        // If the correct order is achieved
         checkText.text = "Correct Order - Well Done!";
         continueButton.gameObject.SetActive(true);
         finishSound.Play();
@@ -44,7 +49,6 @@ public class MergeSortLevelOneCheckerPartOne : MonoBehaviour
     // Get the expected text content of a code block based on its index
     private string GetExpectedCodeBlockText(int index)
     {
-        // Define the expected order based on your requirements
 
         string[] expectedOrder =
         {

@@ -17,10 +17,10 @@ public class QuickSortLevelOneCheckerPartTwo : MonoBehaviour
         List<TMP_Text> codeBlocks = new List<TMP_Text>();
         foreach (Transform child in transform)
         {
+            // Get text component from child objects
             TMP_Text codeBlockText = child.GetComponentInChildren<TMP_Text>();
             codeBlocks.Add(codeBlockText);
         }
-
 
         // Check the order
         for (int i = 0; i < codeBlocks.Count; i++)
@@ -34,7 +34,9 @@ public class QuickSortLevelOneCheckerPartTwo : MonoBehaviour
             }
         }
 
+        // Display correct order message
         checkText.text = "Correct Order - Well Done!";
+        // Activate continue button and play finish sound
         continueButton.gameObject.SetActive(true);
         finishSound.Play();
         continueText.text = "Continue with story mode";

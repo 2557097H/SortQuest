@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class InitiateLevel : MonoBehaviour
 {
+    // References to canvas objects and player
     public GameObject canvasLevelOne;
     public GameObject canvasLevelTwo;
     public GameObject canvasSort;
     public GameObject player;
 
+    // Flags to track whether specific triggers have been activated
     private static bool chestTriggered = false;
     private static bool bridgeTriggered = false;
     private static bool foodTriggered = false;
@@ -17,8 +19,10 @@ public class InitiateLevel : MonoBehaviour
     private static bool directionsTriggered = false;
     private static bool castleTriggered = false;
 
+    // Trigger detection function
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
+        // Check which trigger has been activated and load appropriate level
         if (!chestTriggered && collider2D.gameObject.CompareTag("Chest"))
         {
             LoadLevelOne();
@@ -49,13 +53,8 @@ public class InitiateLevel : MonoBehaviour
             LoadLevelOne();
             woodLogsTriggered = true;
         }
-        else if (collider2D.gameObject.CompareTag("ToSort"))
-        {
-            canvasSort.SetActive(true);
-            player.SetActive(false);
-            
-        }
-        else if (collider2D.gameObject.CompareTag("Sword"))
+        // Activate canvas for when player enters sorting trigger area
+        else if (collider2D.gameObject.CompareTag("ToSort") || collider2D.gameObject.CompareTag("Sword"))
         {
             canvasSort.SetActive(true);
             player.SetActive(false);

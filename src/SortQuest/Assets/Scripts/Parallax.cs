@@ -10,12 +10,16 @@ public class Parallax : MonoBehaviour
 
     void Start()
     {
+        // Get the initial position of the background
         startpos = transform.position.x;
+
+        // Get the length of the background sprite
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     void Update()
     {
+        // Calculate the distance the camera has moved
         float temp = cam.transform.position.x * (1 - parallaxEffect);
         float dist = cam.transform.position.x * parallaxEffect;
 

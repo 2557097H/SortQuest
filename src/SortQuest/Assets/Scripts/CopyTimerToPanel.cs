@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CopyTimerToPanel : MonoBehaviour
 {
-    public Image timerBackground;
-    public TextMeshProUGUI timerText;
+    public Image timerBackground; // Reference to the image background of the timer
+    public TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for timer text
 
     public void onClickButton()
     {
@@ -24,7 +24,6 @@ public class CopyTimerToPanel : MonoBehaviour
             // Find and move objects to MergePanel
             MoveObjectsToPanel("MergePanel");
         }
-        // Add more conditions as needed for other scenes
     }
 
     private void MoveObjectsToPanel(string panelName)

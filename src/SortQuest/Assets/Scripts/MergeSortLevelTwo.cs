@@ -9,17 +9,19 @@ using UnityEngine.UI;
 
 public class MergeSortLevelTwo : MonoBehaviour
 {
+    // List to capture intermediate steps of merge sort
     private List<int> mergeHistory = new System.Collections.Generic.List<int>();
     private List<int> mergeHistoryChecker = new System.Collections.Generic.List<int>();
-    public TMP_Text resultText;
-    public Button continueButton;
-    [SerializeField] AudioSource finishSound;
+    public TMP_Text resultText; // Text object to display result
+    public Button continueButton; // Button to continue
+    [SerializeField] AudioSource finishSound; // Sound played on finishing
 
     void Start()
     {
         int[] array = { 5, 2, 6, 7, 3, 9, 8, 4 };
         Debug.Log("Original Array: " + string.Join(", ", array));
 
+        // Call merge sort algorithm
         MergeSort(array, array.Length, CaptureIntermediateList);
     }
 
@@ -27,7 +29,7 @@ public class MergeSortLevelTwo : MonoBehaviour
     {
         if (n < 2)
         {
-            captureCallback(A);
+            captureCallback(A); // Capture intermediate step
             return;
         }
 
@@ -45,13 +47,13 @@ public class MergeSortLevelTwo : MonoBehaviour
             r[i - mid] = A[i];
         }
 
-        captureCallback(A);
+        captureCallback(A); // Capture intermediate step
 
         MergeSort(l, mid, captureCallback);
         MergeSort(r, n - mid, captureCallback);
 
         Merge(A, l, r, mid, n - mid);
-        captureCallback(A);
+        captureCallback(A); // Capture intermediate step
     }
 
     void Merge(int[] A, int[] l, int[] r, int left, int right)
@@ -90,17 +92,20 @@ public class MergeSortLevelTwo : MonoBehaviour
 
     void CaptureIntermediateList(int[] intermediateList)
     {
+        // Capture intermediate step
         foreach (int i in intermediateList)
         {
             mergeHistory.Add(i);
         }
     }
+
     public void KeyCheckUpdate()
     {
         // Get all child objects of the WoodManager and sort them based on their position in the hierarchy
         GameObject contentObject = GameObject.Find("Content");
         mergeHistoryChecker.Clear();
-        
+
+        // Check keys
         foreach (Transform list in contentObject.transform)
         {
             if (!list.name.Contains("List"))
@@ -110,25 +115,28 @@ public class MergeSortLevelTwo : MonoBehaviour
             Transform grid = list.transform.GetChild(0);
 
             foreach (Transform slot in grid)
-                try
             {
-                GameObject slotObject = slot.gameObject;
-                GameObject keyObject = slotObject.transform.GetChild(0).gameObject;
-                TMP_Text numberTextTMP = keyObject.transform.GetChild(0).GetComponent<TMP_Text>();
-                mergeHistoryChecker.Add(int.Parse(numberTextTMP.text));
+                try
+                {
+                    GameObject slotObject = slot.gameObject;
+                    GameObject keyObject = slotObject.transform.GetChild(0).gameObject;
+                    TMP_Text numberTextTMP = keyObject.transform.GetChild(0).GetComponent<TMP_Text>();
+                    mergeHistoryChecker.Add(int.Parse(numberTextTMP.text));
 
                 }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Exception caught: {ex.Message}");
-                mergeHistoryChecker.Add(-1);
-                continue;
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Exception caught: {ex.Message}");
+                    mergeHistoryChecker.Add(-1);
+                    continue;
+                }
             }
-        
         }
 
+        // Compare lists
         if (mergeHistoryChecker.SequenceEqual(mergeHistory))
         {
+            // Correct result
             resultText.text = "Correct - Well Done";
             finishSound.Play();
             continueButton.gameObject.SetActive(true);
@@ -141,16 +149,14 @@ public class MergeSortLevelTwo : MonoBehaviour
                 foreach (Transform slot in grid)
                 {
                     GameObject slotObject = slot.gameObject;
-
-
                     slotObject.GetComponent<Image>().color = Color.green;
                     j++;
-
                 }
             }
         }
         else
         {
+            // Wrong result
             resultText.text = "Wrong";
             int i = 0;
             foreach (Transform list in contentObject.transform)
@@ -164,7 +170,6 @@ public class MergeSortLevelTwo : MonoBehaviour
 
                     if (mergeHistory[i] != mergeHistoryChecker[i])
                     {
-
                         slotObject.GetComponent<Image>().color = Color.red;
                         i++;
                     }
@@ -173,15 +178,8 @@ public class MergeSortLevelTwo : MonoBehaviour
                         slotObject.GetComponent<Image>().color = Color.green;
                         i++;
                     }
-
-
-
                 }
-
-
             }
-
-
         }
     }
 }

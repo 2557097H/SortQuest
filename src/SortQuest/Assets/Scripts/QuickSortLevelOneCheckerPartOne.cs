@@ -6,9 +6,13 @@ using UnityEngine.UI;
 
 public class QuickSortLevelOneCheckerPartOne : MonoBehaviour
 {
+    // Text to display check results
     public TMP_Text checkText;
+    // Text to prompt for continuing
     public TMP_Text continueText;
+    // Button to continue
     public Button continueButton;
+    // Audio source for finish sound
     [SerializeField] AudioSource finishSound;
 
     // Check the order of code blocks
@@ -22,19 +26,23 @@ public class QuickSortLevelOneCheckerPartOne : MonoBehaviour
             codeBlocks.Add(codeBlockText);
         }
 
-
         // Check the order
         for (int i = 0; i < codeBlocks.Count; i++)
         {
+            // Check if the current code block text matches the expected text
             if (codeBlocks[i].text.ToLower().Replace(" ", "") != GetExpectedCodeBlockText(i).ToLower().Replace(" ", ""))
             {
+                // Display message for incorrect order
                 checkText.text = "Not correct order - try again";
                 return;
             }
         }
 
+        // Display message for correct order
         checkText.text = "Correct Order - Well Done!";
+        // Play finish sound
         finishSound.Play();
+        // Enable continue button and set continue text
         continueButton.gameObject.SetActive(true);
         continueText.text = "Continue to partition pseudocode re-arrangement";
     }
@@ -42,8 +50,6 @@ public class QuickSortLevelOneCheckerPartOne : MonoBehaviour
     // Get the expected text content of a code block based on its index
     private string GetExpectedCodeBlockText(int index)
     {
-        // Define the expected order based on your requirements
-
         string[] expectedOrder =
         {
             "procedure quickSort(A: list, low: integer, high: integer)",

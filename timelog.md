@@ -378,6 +378,34 @@
 
 * *2 hour* Dissertation writing
 
+## 9th March
+
+* *3 hour* Dissertation writing
+
+## 10th March
+
+* *7 hour* Dissertation writing
+
+## 11th March
+
+* *8 hour* Dissertation writing
+
+## 12th March 
+
+* *8 hour* Dissertaton writing
+
+## 13th March 
+
+* *8 hour* Dissertaton writing
+
+## 14th March 
+
+* *4 hour* Dissertaton writing
+
+## 15th March 
+
+* *8 hour* Dissertaton writing
+
 -Deploying app
 -Customisation of avatars
 -Profiles

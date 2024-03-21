@@ -13,30 +13,30 @@ using System.Text.RegularExpressions;
 
 public class Timer : MonoBehaviour
 {
-    public Image timerBackground;
-    public TextMeshProUGUI timerText;
-    public Button continueButton;
-    public User user;
+    public Image timerBackground; // Reference to the timer's background image
+    public TextMeshProUGUI timerText; // Reference to the timer's text component
+    public Button continueButton; // Reference to the continue button
+    public User user; // Reference to the User class
 
-    private bool isChallengeActive;
-    private float startTime;
-    private float elapsedTime;
+    private bool isChallengeActive; // Flag indicating whether the challenge is active
+    private float startTime; // Time when the challenge started
+    private float elapsedTime; // Elapsed time since the challenge started
 
-    private string playerName;
-    DatabaseReference dbRef;
-    private bool isPracticeMode;
+    private string playerName; // Player's name
+    DatabaseReference dbRef; // Reference to the Firebase Database
+    private bool isPracticeMode; // Flag indicating whether it's practice mode
 
     async void Start()
     {
-        await UnityServices.InitializeAsync();
-        dbRef = FirebaseDatabase.DefaultInstance.RootReference;
-        isPracticeMode = PlayerPrefs.GetInt("PracticeMode", 0) == 1;
+        await UnityServices.InitializeAsync(); // Initialize Unity Services
+        dbRef = FirebaseDatabase.DefaultInstance.RootReference; // Reference to the root of the Firebase Database
+        isPracticeMode = PlayerPrefs.GetInt("PracticeMode", 0) == 1; // Check if it's practice mode
         if (isPracticeMode)
         {
-            timerText.gameObject.SetActive(true);
-            timerBackground.gameObject.SetActive(true);
-            startTime = Time.time;
-            isChallengeActive = true;
+            timerText.gameObject.SetActive(true); // Activate the timer text
+            timerBackground.gameObject.SetActive(true); // Activate the timer background
+            startTime = Time.time; // Record the start time
+            isChallengeActive = true; // Set the challenge as active
         }
     }
 
@@ -44,11 +44,11 @@ public class Timer : MonoBehaviour
     {
         if (isChallengeActive)
         {
-            elapsedTime = Time.time - startTime;
-            UpdateTimerText(elapsedTime);
+            elapsedTime = Time.time - startTime; // Calculate elapsed time
+            UpdateTimerText(elapsedTime); // Update the timer text
             if (continueButton.isActiveAndEnabled)
             {
-                isChallengeActive = false;
+                isChallengeActive = false; // If the continue button is active, end the challenge
             }
         }
     }
@@ -74,21 +74,22 @@ public class Timer : MonoBehaviour
         {
             elapsedTime = (float)Math.Round(elapsedTime, 2);
 
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            playerName = await AuthenticationService.Instance.GetPlayerNameAsync();
+            string currentSceneName = SceneManager.GetActiveScene().name; // Get the current scene name
+            playerName = await AuthenticationService.Instance.GetPlayerNameAsync(); // Get the player's name
             string pattern = @"^(.*?)(?:#(\d+))?$";
 
-            Match match = Regex.Match(playerName, pattern);
+            Match match = Regex.Match(playerName, pattern); // Match the player's name pattern
 
             if (match.Success)
             {
-                playerName = match.Groups[1].Value;
+                playerName = match.Groups[1].Value; // Extract the player's name
             }
 
             if (!string.IsNullOrEmpty(playerName))
             {
-                DatabaseReference userReference = FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(playerName);
+                DatabaseReference userReference = FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(playerName); // Reference to the player's data in the database
 
+                // Check the current scene name and set the score accordingly
                 if (currentSceneName == "BubbleSortLevelOne")
                 {
                     await SetScore(userReference, "bubbleSortLevelOne", elapsedTime);
@@ -115,12 +116,13 @@ public class Timer : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Player name is not available.");
+                    Debug.LogError("Player name is not available."); // Log an error if the player's name is not available
                 }
             }
         }
     }
 
+    // Set the score in the database
     private async Task SetScore(DatabaseReference userReference, string scoreField, float score)
     {
         try
@@ -151,6 +153,7 @@ public class Timer : MonoBehaviour
         }
     }
 
+    // Update the leaderboard with the new score
     private async Task UpdateLeaderboard(string level, string playerName, float score)
     {
         try

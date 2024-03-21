@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class MergeSortLevelOneCheckerPartTwo : MonoBehaviour
 {
-    public TMP_Text checkText;
-    public TMP_Text continueText;
-    public Button continueButton;
-    [SerializeField] AudioSource finishSound;
+    public TMP_Text checkText;          // Text component to display check result
+    public TMP_Text continueText;       // Text component to display continue option
+    public Button continueButton;       // Button to continue
+    [SerializeField] AudioSource finishSound;   // Sound played upon finishing
 
     // Check the order of code blocks
     public void CheckCodeBlockOrder()
@@ -22,13 +22,12 @@ public class MergeSortLevelOneCheckerPartTwo : MonoBehaviour
             codeBlocks.Add(codeBlockText);
         }
 
-
         // Check the order
         for (int i = 0; i < codeBlocks.Count; i++)
         {
             if (codeBlocks[i].text.ToLower().Replace(" ", "").Trim() != GetExpectedCodeBlockText(i).ToLower().Replace(" ", "").Trim())
             {
-                checkText.text = "Not correct order - try again";
+                checkText.text = "Not correct order - try again";  // Display message for incorrect order
                 return;
             }
         }
@@ -36,14 +35,13 @@ public class MergeSortLevelOneCheckerPartTwo : MonoBehaviour
         checkText.text = "Correct Order - Well Done!";
         continueButton.gameObject.SetActive(true);
         finishSound.Play();
-        PlayerPrefs.SetInt("WoodActive", 1);
+        PlayerPrefs.SetInt("WoodActive", 1);          // Set PlayerPrefs for wood activation
         continueText.text = "Continue";
     }
-
     // Get the expected text content of a code block based on its index
     private string GetExpectedCodeBlockText(int index)
     {
-        // Define the expected order based on your requirements
+        
 
         string[] expectedOrder =
         {

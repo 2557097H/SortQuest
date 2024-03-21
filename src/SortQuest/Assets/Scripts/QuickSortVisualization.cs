@@ -5,27 +5,30 @@ using UnityEngine.UI;
 
 public class QuickSortVisualization : MonoBehaviour
 {
+    // Public variables
     public GameObject[] numberObjects;
     public float swapDelay = 1.0f;
     public float pivotDisplayDelay = 1.5f;
+
+    // Private variables
     private GameObject[] originalPositions = new GameObject[7];
     private Vector3[] originalPositionTransforms = new Vector3[7];
 
-    public TextMeshProUGUI stateText; // Text element to display the state
-    private bool isPlaying = false; // Flag to control play/pause
-    private bool isPaused = false; // Flag to indicate if the coroutine is paused
+    // UI Text element to display the state
+    public TextMeshProUGUI stateText;
+
+    // Flags to control play/pause
+    private bool isPlaying = false;
+    private bool isPaused = false;
     private int count = 0;
 
     void Start()
     {
+        // Save original positions of number objects
         SaveOriginalPositions();
     }
 
-    void Update()
-    {
-        // No need for keyboard input checking here, as buttons will handle it
-    }
-
+    // Function to toggle play/pause
     public void TogglePlayPause()
     {
         isPlaying = !isPlaying;
@@ -33,52 +36,59 @@ public class QuickSortVisualization : MonoBehaviour
         if (isPlaying)
         {
             isPaused = false;
-            if(count == 0)
+            if (count == 0)
             {
+                // Start QuickSortAnimation coroutine
                 StartCoroutine(QuickSortAnimation(0, numberObjects.Length - 1));
                 count++;
-
             }
-            
         }
         else
         {
             isPaused = true;
         }
 
+        // Update state text
         UpdateStateText();
     }
 
     void UpdateStateText()
     {
+        // Update state text based on play/pause state and count
         stateText.text = isPlaying ? "Playing" : (count == 2 ? "Finished" : "Paused");
     }
 
+    // Coroutine for Quick Sort animation
     IEnumerator QuickSortAnimation(int low, int high)
     {
         if (low < high)
         {
             bool swapsOccurred = false;
+            // Call Partition coroutine
             yield return StartCoroutine(Partition(numberObjects, low, high, swapDelay, pivotDisplayDelay, (swaps) => swapsOccurred = swaps));
 
             int partitionIndex = PartitionIndex;
 
             if (swapsOccurred)
             {
+                // Recursive calls for left and right partitions
                 yield return StartCoroutine(QuickSortAnimation(low, partitionIndex - 1));
                 yield return StartCoroutine(QuickSortAnimation(partitionIndex + 1, high));
             }
 
-            if (partitionIndex == 5){
+            if (partitionIndex == 5)
+            {
                 count = 2;
                 isPlaying = false;
             }
+            // Update state text
             UpdateStateText();
         }
     }
 
     private int PartitionIndex;
 
+    // Coroutine for partitioning step
     IEnumerator Partition(GameObject[] array, int low, int high, float duration, float pivotDisplayDelay, System.Action<bool> setSwapsOccurred)
     {
         int pivot = GetNumber(array[high]);
@@ -86,6 +96,7 @@ public class QuickSortVisualization : MonoBehaviour
 
         bool swapsOccurred = false;
 
+        // Create text object to display pivot
         GameObject pivotTextObj = CreateTextObject("Pivot: " + pivot.ToString(), array[high]);
         yield return new WaitForSeconds(pivotDisplayDelay);
 
@@ -102,32 +113,40 @@ public class QuickSortVisualization : MonoBehaviour
             if (GetNumber(array[j]) < pivot)
             {
                 i++;
+                // Swap objects
                 yield return StartCoroutine(SwapObjects(array[i], array[j], duration));
                 swapsOccurred = true;
             }
         }
 
+        // Final swap and update pivot index
         yield return StartCoroutine(SwapObjects(array[i + 1], array[high], duration));
         PartitionIndex = i + 1;
 
+        // Change pivot text
         ChangePivotText(pivotTextObj, "Pivot Complete");
 
+        // Set swaps occurred
         setSwapsOccurred(swapsOccurred);
     }
 
+    // Coroutine to swap two objects
     IEnumerator SwapObjects(GameObject obj1, GameObject obj2, float duration)
     {
         Vector3 pos1 = obj1.transform.localPosition;
         Vector3 pos2 = obj2.transform.localPosition;
 
+        // Move objects
         yield return StartCoroutine(MoveObject(obj1, pos2, duration));
         yield return StartCoroutine(MoveObject(obj2, pos1, duration));
 
+        // Swap elements in array
         int index1 = System.Array.IndexOf(numberObjects, obj1);
         int index2 = System.Array.IndexOf(numberObjects, obj2);
         SwapArrayElements(numberObjects, index1, index2);
     }
 
+    // Coroutine to move an object
     IEnumerator MoveObject(GameObject obj, Vector3 targetPosition, float duration)
     {
         float elapsedTime = 0;
@@ -157,6 +176,7 @@ public class QuickSortVisualization : MonoBehaviour
         }
     }
 
+    // Get the number from text object
     int GetNumber(GameObject obj)
     {
         TextMeshProUGUI tmpText = obj.GetComponentInChildren<TextMeshProUGUI>();
@@ -169,6 +189,7 @@ public class QuickSortVisualization : MonoBehaviour
         return 0;
     }
 
+    // Swap elements in an array
     void SwapArrayElements<T>(T[] array, int index1, int index2)
     {
         T temp = array[index1];
@@ -176,6 +197,7 @@ public class QuickSortVisualization : MonoBehaviour
         array[index2] = temp;
     }
 
+    // Create text object to display pivot
     GameObject CreateTextObject(string text, GameObject parent)
     {
         GameObject textObj = new GameObject("PivotText");
@@ -191,7 +213,7 @@ public class QuickSortVisualization : MonoBehaviour
         return textObj;
     }
 
-
+    // Change pivot text
     void ChangePivotText(GameObject pivotTextObj, string newText)
     {
         TextMeshProUGUI textMesh = pivotTextObj.GetComponentInChildren<TextMeshProUGUI>();
@@ -201,6 +223,7 @@ public class QuickSortVisualization : MonoBehaviour
         }
     }
 
+    // Save original positions of number objects
     void SaveOriginalPositions()
     {
         int objectCount = numberObjects.Length;
@@ -209,10 +232,10 @@ public class QuickSortVisualization : MonoBehaviour
         {
             originalPositions[i] = numberObjects[i];
             originalPositionTransforms[i] = numberObjects[i].transform.position;
-
         }
     }
 
+    // Reset object positions
     void ResetObjectPositions()
     {
         int objectCount = numberObjects.Length;
@@ -221,10 +244,10 @@ public class QuickSortVisualization : MonoBehaviour
         {
             numberObjects[i] = originalPositions[i];
             numberObjects[i].transform.position = originalPositionTransforms[i];
-
         }
     }
 
+    // Reset the visualization
     public void Reset()
     {
         StopAllCoroutines(); // Stop any running coroutines
@@ -236,6 +259,7 @@ public class QuickSortVisualization : MonoBehaviour
         UpdateStateText(); // Update the state text
     }
 
+    // Destroy pivot text objects
     void DestroyPivotTextObjects()
     {
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PivotText"))
@@ -244,3 +268,4 @@ public class QuickSortVisualization : MonoBehaviour
         }
     }
 }
+
