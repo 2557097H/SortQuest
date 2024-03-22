@@ -10,7 +10,7 @@ Please make sure you are authenticated with a UofG account and:
 
 3. Start the SortQuest.exe file to play the game.
 
-## Game Build Instructions (Can be ignored if you play the game using the above method)
+Alternatively, youc can
 
 1. Download Unity Game Engine, at least the 2023 version as that is what was used to create 'SortQuest'
 2. Unzip source code
