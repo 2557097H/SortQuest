@@ -7,7 +7,6 @@ If looking to run and build the app please use this repository: . The app will l
 'SortQuest' is a game-based learning tool which teaches sorting algorithms, namely, bubble sort, quick sort, and merge sort. It was made as part of my Level 4 Project using Unity. This repository contains all the features/files used in 'SortQuest'.
 
 ## Game Zip Download(For those at University of Glasgow)
-Copy and paste this link into your browser: 
 
 [Download SortQuestFullGame.zip](https://gla-my.sharepoint.com/personal/2557097h_student_gla_ac_uk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F2557097h%5Fstudent%5Fgla%5Fac%5Fuk%2FDocuments%2FSortQuestFullGame%2Ezip&parent=%2Fpersonal%2F2557097h%5Fstudent%5Fgla%5Fac%5Fuk%2FDocuments&ga=1)
 
