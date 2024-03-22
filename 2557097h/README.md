@@ -18,7 +18,9 @@ Please make sure you are authenticated with a UofG account and:
 ## Game Build Instructions (Can be ignored if you play the game using the above method)
 
 1. Download Unity Game Engine, at least the 2023 version as that is what was used to create 'SortQuest'
-2. Unzip source code
+
+2. IMPORTANT: Clone the src folder from this repository: (Please note that the source code can only be built and run from this full repository. This was created because the zip file of this full repository was 1GB and moodle only accepts 100mb, thus I had to take out the FireBase configuration and other dependent files to reduce this zip file to less than 100MB)
+
 3. Launch Unity and go to Projects then Add, find the unzipped project and then launch it
 4. Navigate to file then build and run, then drag all scenes from the scenes folder into the build settings
 5. Click Build and Run, then run the SortQuest.exe file in the location you chose for the build to be put at
