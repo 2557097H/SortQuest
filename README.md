@@ -1,6 +1,6 @@
 # SortQuest
 
-'SortQuest' is a game-based learning tool which teaches sorting algorithms. It was made as part of my Level 4 Project.
+'SortQuest' is a game-based learning tool which teaches sorting algorithms, namely, bubble sort, quick sort, and merge sort. It was made as part of my Level 4 Project using Unity. This repository contains all the features/files used in 'SortQuest'.
 
 ## Game Zip Download(For those at University of Glasgow)
 Copy and paste this link into your browser: 
