@@ -1,16 +1,9 @@
 # Timelog
 
-* PROJECT NAME
+* SortQuest: Game-Based Learning For Sorting Algorithms
 * Euan Halliday
 * 2557097H
-* SUPERVISOR NAME
-
-## Guidance
-
-* This file contains the time log for your project. It will be submitted along with your final dissertation.
-* **YOU MUST KEEP THIS UP TO DATE AND UNDER VERSION CONTROL.**
-* This timelog should be filled out honestly, regularly (daily) and accurately. It is for *your* benefit.
-* Follow the structure provided, grouping time by weeks.  Quantise time to the half hour.
+* Oana Andrei
 
 ## Week 0
 
@@ -247,7 +240,7 @@
 
 ## 23rd Jan 2023
 
-*6 hour* Continued coding merge sort challenge level two
+* *6 hour* Continued coding merge sort challenge level two
 
 # 24th Jan 2023
 
@@ -396,6 +389,7 @@
 
 ## 13th March 
 
+* *0.5 hour* Supervisor meeting
 * *8 hour* Dissertaton writing
 
 ## 14th March 
@@ -406,15 +400,27 @@
 
 * *8 hour* Dissertaton writing
 
--Deploying app
--Customisation of avatars
--Profiles
--Map designs
--Practice mode
+## 16th March 
 
-How long it will take to do each stage
-ask question beofre and after to see difference
-system usabillity
-game features
-algorithm features
-skill increase
+* *10 hour* Dissertaton writing
+
+## 17th March 
+
+* *8 hour* Dissertaton writing
+
+## 18th March
+
+* *8 hour* First draft of dissertation writing finished
+
+## 20th March
+
+* *0.5 hour* Supervisor meeting
+* *8 hour* Dissertation writing
+
+## 21st March
+
+* *12 hour* Dissertation writing, code cleaning and documenting, video presentation
+
+## 22nd
+
+* 0.5 hour* Submission!

@@ -3493,7 +3493,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 935305109}
         m_TargetAssemblyTypeName: QuickSortLevelTwo, Assembly-CSharp
-        m_MethodName: UpdateWoodArray
+        m_MethodName: UpdateDirectionArray
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3939,6 +3939,13 @@ MonoBehaviour:
     quickSortLevelTwo: 0
     mergeSortLevelOne: 0
     mergeSortLevelTwo: 0
+    badges:
+      bubbleBadge: 0
+      quickBadge: 0
+      mergeBadge: 0
+      storyBadge: 0
+      practiceBadge: 0
+      learnBadge: 0
 --- !u!82 &935305112
 AudioSource:
   m_ObjectHideFlags: 0

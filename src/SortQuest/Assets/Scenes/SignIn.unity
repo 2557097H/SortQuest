@@ -4931,7 +4931,6 @@ GameObject:
   - component: {fileID: 1681010609}
   - component: {fileID: 1681010608}
   - component: {fileID: 1681010611}
-  - component: {fileID: 1681010612}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5047,24 +5046,6 @@ MonoBehaviour:
       practiceBadge: 0
       learnBadge: 0
   userId: 
---- !u!114 &1681010612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681010607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edb7d738ab67fc749844a7be994ca58c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dts:
-    userName: Euan
-    totalCoins: 2
-    crrLevel: 3
-    highScore: 4
-  userId: 112
 --- !u!1 &1786206410
 GameObject:
   m_ObjectHideFlags: 0

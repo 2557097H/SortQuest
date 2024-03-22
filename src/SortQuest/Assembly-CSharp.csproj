@@ -88,10 +88,10 @@
     <Compile Include="Assets\Scripts\BubbleLevelOne.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Runtime\Attributes\GUIColorAttribute.cs" />
     <Compile Include="Assets\Scripts\MergeSortVisualization.cs" />
-    <Compile Include="Assets\Scripts\KeySlot.cs" />
-    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Runtime\Attributes\EnableIfAttribute.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Runtime\Attributes\ReadOnlyAttribute.cs" />
+    <Compile Include="Assets\Scripts\KeySlot.cs" />
     <Compile Include="Assets\Sprites\Hero Knight\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Runtime\Attributes\EnableIfAttribute.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Runtime\Attributes\SectionHeaderAttribute.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

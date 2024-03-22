@@ -66,13 +66,13 @@
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\GroupAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\PropertyProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\HelpBoxAttributeProcessor.cs" />
-    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Extensions\SerializedPropertyExtensions.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Pixel Art Platformer - Village Props\Script\Editor\ElevatorEditor.cs" />
+    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Extensions\SerializedPropertyExtensions.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\HorizontalGroupAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\RequiredAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Extensions\EnumExtensions.cs" />
-    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\LabelWidthAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\HideIfAttributeProcessor.cs" />
+    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\LabelWidthAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\EnableIfAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\InspectorProperty\EditableInspectorProperty.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\PropertyGroupProcessor.cs" />
@@ -92,8 +92,8 @@
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\PropertyOrderAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Pixel Art Platformer - Village Props\Script\Editor\ChestEditor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\LucidEditorPrefs.cs" />
-    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\InspectorProperty\InspectorProperty.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\TabGroupAttributeProcessor.cs" />
+    <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\InspectorProperty\InspectorProperty.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Utils\ReflectionUtil.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\ReadOnlyAttributeProcessor.cs" />
     <Compile Include="Assets\Sprites\VillageProps\Third Party\Lucid Editor\Editor\Attributes\IndentAttributeProcessor.cs" />
