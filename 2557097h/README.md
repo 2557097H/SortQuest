@@ -1,3 +1,7 @@
+# IMPORTANT
+
+If looking to run and build the app please use this repository: . The app will likely not work without it. This was outwith my control because my full repository zip is nearly 1GB and Moodle only accepts 100MB maximum. However, instead of building and running, app can be directly run from the zip file linked below.
+
 # SortQuest
 
 'SortQuest' is a game-based learning tool which teaches sorting algorithms, namely, bubble sort, quick sort, and merge sort. It was made as part of my Level 4 Project using Unity. This repository contains all the features/files used in 'SortQuest'.
